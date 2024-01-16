@@ -18,7 +18,7 @@ export function Header() {
         <div className="flex md:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Logo</span>
-            <Logo />
+            <Logo className="text-primary-500 w-10 h-10" />
           </a>
         </div>
         <div className="hidden md:flex md:gap-x-12">

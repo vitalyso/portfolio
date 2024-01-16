@@ -1,6 +1,7 @@
-export function Logo() {
+export function Logo({ className }: { className?: string }) {
   return (
     <svg
+      className={className}
       width="43"
       height="43"
       viewBox="0 0 43 43"
@@ -11,7 +12,7 @@ export function Logo() {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M21.5 43C33.3741 43 43 33.3741 43 21.5C43 9.62588 33.3741 0 21.5 0C9.62588 0 0 9.62588 0 21.5C0 33.3741 9.62588 43 21.5 43ZM15.5252 13.3005L19.6849 19.8375H15.6198L13.485 16.4673H10.541L21.4843 33.7249L28.6801 22.3167H32.6231L21.4843 39.826L4.60986 13.3005H15.5252ZM17.1902 22.3167H21.2625L21.4843 22.6653L27.4435 13.3005H38.3588L34.2002 19.8375H30.2438L32.3695 16.4673H29.4449L21.4843 29.0957L17.1902 22.3167Z"
-        fill="#FF5A38"
+        fill="currentColor"
       />
     </svg>
   );
