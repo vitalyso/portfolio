@@ -11,7 +11,7 @@ const heroFont = Montserrat({
 });
 
 const bodyFont = Mukta_Mahee({
-  weight: ["300", "400"],
+  weight: ["300", "400", "600"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-body",
