@@ -1,8 +1,28 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Mukta_Mahee, Montserrat, Cormorant_Garamond } from "next/font/google";
+import { cn } from "~/lib/utils";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const heroFont = Montserrat({
+  weight: ["600"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-hero",
+});
+
+const bodyFont = Mukta_Mahee({
+  weight: ["300", "400"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-body",
+});
+
+const titleFont = Cormorant_Garamond({
+  weight: ["700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-title",
+});
 
 export const metadata: Metadata = {
   title: "Vitaly Sivkov",
@@ -16,7 +36,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(bodyFont.variable, heroFont.variable, titleFont.variable)}
+      >
+        {children}
+      </body>
     </html>
   );
 }

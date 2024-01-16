@@ -26,7 +26,7 @@ export function Header() {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm text-foreground font-semibold leading-6"
+              className="text-foreground font-light leading-6 hover:text-primary-500 transition-colors"
             >
               {item.name}
             </a>

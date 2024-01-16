@@ -13,6 +13,11 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        hero: ["var(--font-hero)"],
+        body: ["var(--font-body)"],
+        title: ["var(--font-title)"],
+      },
       colors: {
         primary: {
           50: "#FFEEEB",
