@@ -11,9 +11,9 @@ const navigation = [
 
 export function Header() {
   return (
-    <header>
+    <header className="md:px-8">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-8 relative"
+        className="mx-auto flex max-w-screen-md items-center justify-between gap-x-6 py-6 relative"
         aria-label="Global"
       >
         <div className="flex md:flex-1">

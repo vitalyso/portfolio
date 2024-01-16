@@ -4,7 +4,7 @@ import { cn } from "~/lib/utils";
 import "./globals.css";
 
 const heroFont = Montserrat({
-  weight: ["600"],
+  weight: ["400", "600"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-hero",
