@@ -13,7 +13,7 @@ export function Header() {
   return (
     <header className="md:px-8">
       <nav
-        className="mx-auto flex max-w-screen-md items-center justify-between gap-x-6 py-6 relative"
+        className="mx-auto flex max-w-screen-lg items-center justify-between gap-x-6 py-6 relative"
         aria-label="Global"
       >
         <div className="flex md:flex-1">

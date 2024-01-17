@@ -24,3 +24,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+img {
+  pointer-events: none;
+  user-select: none;
+}

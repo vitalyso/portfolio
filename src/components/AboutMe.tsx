@@ -25,7 +25,7 @@ export function AboutMe() {
           building complex web-based applications. For the last 8 years, I've
           been focusing on the frontend side development and architecture, but I
           can still do backend work as needed. I continuously improve my skills,
-          learn new approaches, best practices and technologies, so you can be
+          learn new approaches, best practices and technologies. So you can be
           sure I will do my best to make your project successful.
         </div>
 
