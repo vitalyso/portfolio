@@ -3,7 +3,10 @@ import { cn } from "~/lib/utils";
 
 export function FeaturedWork() {
   return (
-    <section className="w-full max-w-screen-lg mx-auto flex flex-col items-center gap-5">
+    <section
+      id="work"
+      className="w-full max-w-screen-lg mx-auto flex flex-col items-center gap-5 pt-40"
+    >
       <h2 className="text-white text-4xl font-bold font-title">
         Featured Work
       </h2>

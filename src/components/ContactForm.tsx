@@ -106,7 +106,7 @@ export function ContactForm() {
 
 function FormSent() {
   return (
-    <div>
+    <div className="select-none">
       <h2 className="text-white text-4xl font-bold font-title mb-2.5 flex items-center">
         <span>Message Sent</span> <span className="text-3xl pt-2 ml-2">✉️</span>
       </h2>

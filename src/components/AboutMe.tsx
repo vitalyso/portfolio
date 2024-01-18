@@ -4,10 +4,10 @@ import { RadialGradiendBg } from "~/components/RadialGradiendBg";
 
 export function AboutMe() {
   return (
-    <section className="relative overflow-y-hidden">
+    <section id="about" className="relative overflow-y-hidden pt-80">
       <RadialGradiendBg />
 
-      <div className="mx-auto max-w-[740px] min-h-[800px] flex flex-col items-center justify-center relative">
+      <div className="mx-auto max-w-[740px] flex flex-col items-center relative">
         <Avatar className="w-36 h-36">
           <AvatarImage src="/me.jpg" alt="Vitaly" />
         </Avatar>

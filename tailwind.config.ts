@@ -19,6 +19,7 @@ const config: Config = {
         title: ["var(--font-title)"],
       },
       colors: {
+        background: "#1a1f25",
         primary: {
           50: "#FFEEEB",
           100: "#FFDDD6",

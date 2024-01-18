@@ -6,8 +6,11 @@ import { ContactForm } from "~/components/ContactForm";
 
 export function ContactMe() {
   return (
-    <section className="w-full max-w-screen-lg mx-auto pt-40 grid grid-cols-2 gap-5">
-      <div className="w-[400px] flex flex-col gap-2.5">
+    <section
+      id="contact"
+      className="w-full max-w-screen-lg mx-auto pt-40 grid grid-cols-2 gap-5"
+    >
+      <div className="w-[400px] flex flex-col gap-2.5 select-none">
         <h2 className="text-white text-4xl font-bold font-title">
           Let’s build something fantastic together
         </h2>

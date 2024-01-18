@@ -44,7 +44,10 @@ const clients = [
 
 export function HappyClients() {
   return (
-    <section className="w-full max-w-screen-lg mx-auto pt-40 flex flex-col items-center gap-5">
+    <section
+      id="feedback"
+      className="w-full max-w-screen-lg mx-auto pt-40 flex flex-col items-center gap-5"
+    >
       <h2 className="text-white text-4xl font-bold font-title">
         Happy Clients
       </h2>
