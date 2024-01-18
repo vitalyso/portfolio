@@ -11,7 +11,7 @@ export function ContactMe() {
         <h2 className="text-white text-4xl font-bold font-title">
           Let’s build something fantastic together
         </h2>
-        <p className="font-light">
+        <p className="font-light text-white/90">
           Hey there! 🚀 Exciting times ahead! I'm thrilled that you've dropped
           by. Whether you've got a groundbreaking idea or just a spark of
           inspiration, I'm here to turn it into something extraordinary. Let's

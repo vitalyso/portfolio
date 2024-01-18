@@ -39,6 +39,10 @@ export function ContactForm() {
     }
   };
 
+  if (success) {
+    return <FormSent />;
+  }
+
   return (
     <form
       className="flex flex-col items-start gap-4"
@@ -97,6 +101,22 @@ export function ContactForm() {
         {error && <div className="text-red-500">{error}</div>}
       </div>
     </form>
+  );
+}
+
+function FormSent() {
+  return (
+    <div>
+      <h2 className="text-white text-4xl font-bold font-title mb-2.5 flex items-center">
+        <span>Message Sent</span> <span className="text-3xl pt-2 ml-2">✉️</span>
+      </h2>
+      <p className="font-light text-white/80">
+        Thanks a bunch for reaching out! 🙌 <br /> Your message is on its way to
+        my digital doorstep. I'm excited to dive into it and will get back to
+        you pronto. In the meantime, feel free to relax – you've just taken the
+        first step toward something fantastic! Cheers ✨.
+      </p>
+    </div>
   );
 }
 

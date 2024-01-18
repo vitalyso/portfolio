@@ -37,7 +37,7 @@ export function Header() {
           ))}
         </div>
         <div className="flex flex-1 items-center justify-end gap-x-6">
-          <Button size="lg">Let's chat</Button>
+          <Button size="lg">Hire me</Button>
         </div>
       </nav>
     </header>

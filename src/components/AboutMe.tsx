@@ -20,21 +20,21 @@ export function AboutMe() {
           I build complex modern apps while keeping it simple
         </h1>
 
-        <div className="my-4 text-center text-white text-base font-light">
-          Crafting modern apps with a hint of simplicity is my thing. With a
-          solid 12+ years in software development, I've mastered the skill of
-          creating detailed web-based applications. While I've been immersed in
-          frontend development for the past 8 years, I'm also no stranger to the
-          backend scene when it comes calling.
+        <p className="my-4 text-center text-white/90 text-base font-light">
+          Crafting modern apps with a hint of simplicity is my thing. With solid
+          12+ years in professional software development, I've mastered the
+          skill of creating detailed web-based applications. While I've been
+          immersed in frontend development for the past 8 years, I'm also no
+          stranger to the backend scene when it comes calling.
           <br />
           <br />I believe in continual growth, constantly exploring the latest
           approaches, best practices, and cutting-edge technologies. Your
           project is my focus, and I'm dedicated to making it a success. Ready
           to dive in? Share a bit about your project below, and let's make
-          things happen together!
-        </div>
+          things happen together! 🚀
+        </p>
 
-        <Button size="lg">Hire me</Button>
+        <Button size="lg">Let's chat</Button>
       </div>
     </section>
   );
