@@ -36,6 +36,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      {/* favicon */}
+      <head>
+        <link rel="icon" href="/favicon.svg" />
+        <title>Vitaly Sivkov</title>
+      </head>
       <body
         className={cn(bodyFont.variable, heroFont.variable, titleFont.variable)}
       >
