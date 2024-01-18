@@ -29,12 +29,7 @@ export function AboutMe() {
           sure I will do my best to make your project successful.
         </div>
 
-        <Button
-          size="lg"
-          className="rounded-full hover:shadow-lg hover:shadow-primary-500/50"
-        >
-          Hire me
-        </Button>
+        <Button size="lg">Hire me</Button>
       </div>
     </section>
   );

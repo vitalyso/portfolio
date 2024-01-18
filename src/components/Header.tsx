@@ -37,12 +37,7 @@ export function Header() {
           ))}
         </div>
         <div className="flex flex-1 items-center justify-end gap-x-6">
-          <Button
-            size="lg"
-            className="rounded-full hover:shadow-lg hover:shadow-primary-500/50"
-          >
-            Let's chat
-          </Button>
+          <Button size="lg">Let's chat</Button>
         </div>
       </nav>
     </header>
