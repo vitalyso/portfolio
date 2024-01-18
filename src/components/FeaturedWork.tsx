@@ -1,3 +1,4 @@
+import * as React from "react";
 import Image from "next/image";
 import { cn } from "~/lib/utils";
 
@@ -5,7 +6,7 @@ export function FeaturedWork() {
   return (
     <section
       id="work"
-      className="w-full max-w-screen-lg mx-auto flex flex-col items-center gap-5 pt-40"
+      className="w-full max-w-screen-lg mx-auto flex flex-col items-center gap-5 py-10 px-5 md:pt-80 md:pb-0"
     >
       <h2 className="text-white text-4xl font-bold font-title">
         Featured Work
@@ -86,15 +87,13 @@ function ShowcaseItem({
         className
       )}
     >
-      <div className="max-w-[400px] font-sm px-10 py-5 relative z-10 flex flex-col gap-4 font-light">
+      <div className="max-w-[400px] font-sm px-5 md:px-10 py-5 relative z-10 flex flex-col gap-4 font-light">
         {children}
       </div>
-      <Image
-        className="object-contain object-right-top"
+      <img
+        className="w-full md:w-auto object-contain object-right-top"
         src={bgImage}
         alt="Showcase Image"
-        quality={100}
-        fill
       />
     </div>
   );

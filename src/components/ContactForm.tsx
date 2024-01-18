@@ -88,12 +88,12 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="flex w-full items-center gap-5">
+      <div className="flex flex-col md:flex-row w-full items-center gap-5">
         <Button
           size="lg"
           type="submit"
           disabled={pending}
-          className={cn({ "opacity-75": pending })}
+          className={cn("w-full md:w-auto", { "opacity-75": pending })}
         >
           {pending ? "Sending..." : "Send"}
         </Button>

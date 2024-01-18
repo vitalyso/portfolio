@@ -4,7 +4,10 @@ import { RadialGradiendBg } from "~/components/RadialGradiendBg";
 
 export function AboutMe() {
   return (
-    <section id="about" className="relative overflow-y-hidden pt-80">
+    <section
+      id="about"
+      className="relative md:overflow-y-hidden py-10 px-5 md:pt-80 md:pb-0"
+    >
       <RadialGradiendBg />
 
       <div className="mx-auto max-w-[740px] flex flex-col items-center relative">
@@ -12,11 +15,11 @@ export function AboutMe() {
           <AvatarImage src="/me.jpg" alt="Vitaly" />
         </Avatar>
 
-        <div className="text-white text-2xl font-hero leading-loose">
+        <div className="text-white text-base md:text-2xl mt-3 font-hero leading-loose">
           Hi, I’m Vitaly
         </div>
 
-        <h1 className="text-center text-white text-5xl font-semibold font-hero leading-tight">
+        <h1 className="text-center text-white text-xl md:text-5xl font-semibold font-hero leading-tight">
           I build complex modern apps while keeping it simple
         </h1>
 
@@ -34,7 +37,9 @@ export function AboutMe() {
           things happen together! 🚀
         </p>
 
-        <Button size="lg">Let's chat</Button>
+        <Button size="lg" className="w-full md:w-auto">
+          Let's chat
+        </Button>
       </div>
     </section>
   );

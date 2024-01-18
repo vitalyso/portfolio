@@ -74,9 +74,9 @@ export function Header() {
   };
 
   return (
-    <header className="md:px-8 fixed left-0 right-0 top-0 bg-background/90 z-20 backdrop-blur-md">
+    <header className="px-5 md:px-8 md:fixed left-0 right-0 top-0 md:bg-background/90 z-20 md:backdrop-blur-md">
       <nav
-        className="mx-auto flex max-w-screen-lg items-center justify-between gap-x-6 py-5 relative"
+        className="mx-auto flex max-w-screen-lg items-center justify-between py-5 relative"
         aria-label="Global"
       >
         <div className="flex md:flex-1">

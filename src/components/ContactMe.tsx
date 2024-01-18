@@ -1,16 +1,13 @@
-import { IconGitHub } from "~/components/icons/IconGitHub";
-import { IconLinkedIn } from "~/components/icons/IconLinkedIn";
-import { IconTwitter } from "~/components/icons/IconTwitter";
-import { IconMail } from "~/components/icons/IconMail";
 import { ContactForm } from "~/components/ContactForm";
+import { SocialMedia } from "~/components/SocialMedia";
 
 export function ContactMe() {
   return (
     <section
       id="contact"
-      className="w-full max-w-screen-lg mx-auto pt-40 grid grid-cols-2 gap-5"
+      className="w-full max-w-screen-lg mx-auto pt-10 pb-5 px-5 md:pt-80 md:pb-0 grid grid-cols-1 md:grid-cols-2 gap-5"
     >
-      <div className="w-[400px] flex flex-col gap-2.5 select-none">
+      <div className="md:w-[400px] flex flex-col gap-2.5 select-none">
         <h2 className="text-white text-4xl font-bold font-title">
           Let’s build something fantastic together
         </h2>
@@ -26,35 +23,12 @@ export function ContactMe() {
           collaboration. I can't wait to dive in, code, and create magic! Ready
           when you are. Let's build something fantastic! 🌟
         </p>
-
-        <div className="flex gap-4 mt-2">
-          <a
-            className="hover:text-primary-500"
-            href="https://github.com/sivkoff"
-            target="_blank"
-          >
-            <IconGitHub className="h-4 w-4" />
-          </a>
-          <a
-            className="hover:text-primary-500"
-            href="https://twitter.com/vitaly_so"
-            target="_blank"
-          >
-            <IconTwitter className="h-4 w-4" />
-          </a>
-          <a
-            className="hover:text-primary-500"
-            href="https://www.linkedin.com/in/vitalyso"
-            target="_blank"
-          >
-            <IconLinkedIn className="h-4 w-4" />
-          </a>
-          <a className="hover:text-primary-500" href="mailto:">
-            <IconMail className="h-4 w-4" />
-          </a>
-        </div>
+        <SocialMedia className="hidden md:flex" />
       </div>
-      <ContactForm />
+      <div>
+        <ContactForm />
+        <SocialMedia className="md:hidden w-full justify-center mt-[60px]" />
+      </div>
     </section>
   );
 }
