@@ -21,12 +21,17 @@ export function AboutMe() {
         </h1>
 
         <div className="my-4 text-center text-white text-base font-light">
-          I’m a freelance software developer with over 10 years of experience in
-          building complex web-based applications. For the last 8 years, I've
-          been focusing on the frontend side development and architecture, but I
-          can still do backend work as needed. I continuously improve my skills,
-          learn new approaches, best practices and technologies. So you can be
-          sure I will do my best to make your project successful.
+          Crafting modern apps with a hint of simplicity is my thing. With a
+          solid 12+ years in software development, I've mastered the skill of
+          creating detailed web-based applications. While I've been immersed in
+          frontend development for the past 8 years, I'm also no stranger to the
+          backend scene when it comes calling.
+          <br />
+          <br />I believe in continual growth, constantly exploring the latest
+          approaches, best practices, and cutting-edge technologies. Your
+          project is my focus, and I'm dedicated to making it a success. Ready
+          to dive in? Share a bit about your project below, and let's make
+          things happen together!
         </div>
 
         <Button size="lg">Hire me</Button>

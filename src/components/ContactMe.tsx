@@ -11,20 +11,20 @@ export function ContactMe() {
         <h2 className="text-white text-4xl font-bold font-title">
           Let’s build something fantastic together
         </h2>
-        <p>
-          Tousled tilde semiotics fam prism art. Party a pok master pbr&b
-          hammock. Cardigan banjo paleo cleanse ramps. Cleanse tacos you tofu
-          four put street 3-moon vinegar. Gentrify street austin poke gochujang
-          boys organic umami.
+        <p className="font-light">
+          Hey there! 🚀 Exciting times ahead! I'm thrilled that you've dropped
+          by. Whether you've got a groundbreaking idea or just a spark of
+          inspiration, I'm here to turn it into something extraordinary. Let's
+          kick off this digital adventure together!
           <br />
           <br />
-          Drinking 90's wayfarers adaptogen mumblecore. Try-hard bruh baby yes
-          chia plant plaid. Slow-carb bird intelligentsia pug coloring. Probably
-          sartorial disrupt fanny chillwave copper. Health vinegar street art
-          kickstarter.
+          Share a few details, like your name, email, and spill the beans on
+          your project dreams. The more you tell me, the better I can tailor our
+          collaboration. I can't wait to dive in, code, and create magic! Ready
+          when you are. Let's build something fantastic! 🌟
         </p>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 mt-2">
           <a
             className="hover:text-primary-500"
             href="https://github.com/sivkoff"
