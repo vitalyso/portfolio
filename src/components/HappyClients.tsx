@@ -44,14 +44,14 @@ const clients = [
 
 export function HappyClients() {
   return (
-    <section className="w-full max-w-screen-lg mx-auto pt-[120px] flex flex-col items-center gap-5">
+    <section className="w-full max-w-screen-lg mx-auto pt-40 flex flex-col items-center gap-5">
       <h2 className="text-white text-4xl font-bold font-title">
         Happy Clients
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {clients.map((client) => (
-          <ClientFeedback {...client} />
+          <ClientFeedback key={client.avatar} {...client} />
         ))}
       </div>
     </section>
