@@ -2,6 +2,7 @@ import { Header } from "~/components/Header";
 import { AboutMe } from "~/components/AboutMe";
 import { FeaturedWork } from "~/components/FeaturedWork";
 import { HappyClients } from "~/components/HappyClients";
+import { ContactMe } from "~/components/ContactMe";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <AboutMe />
       <FeaturedWork />
       <HappyClients />
+      <ContactMe />
     </main>
   );
 }
