@@ -1,6 +1,6 @@
-import { Avatar, AvatarImage } from "~/components/ui/avatar";
 import { RadialGradiendBg } from "~/components/RadialGradiendBg";
 import { NavButton } from "~/components/NavButton";
+import Image from "next/image";
 
 export function AboutMe() {
   return (
@@ -11,9 +11,13 @@ export function AboutMe() {
       <RadialGradiendBg />
 
       <div className="mx-auto max-w-[740px] pb-5 flex flex-col items-center relative">
-        <Avatar className="w-36 h-36">
-          <AvatarImage src="/me.jpg" alt="Vitaly" />
-        </Avatar>
+        <Image
+          className="w-36 h-36 rounded-full"
+          src="/me.webp"
+          alt="Vitaly"
+          width="150"
+          height="150"
+        />
 
         <div className="text-white text-base md:text-2xl mt-3 font-hero leading-loose">
           Hi, I’m Vitaly

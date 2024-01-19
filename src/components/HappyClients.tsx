@@ -2,42 +2,42 @@ import { Container } from "~/components/utils/Container";
 
 const clients = [
   {
-    avatar: "/clients/bruce.jpeg",
+    avatar: "/clients/bruce.webp",
     name: "Bruce Pomeroy",
     company: "Pomeroy Digital, Inc.",
     feedback:
       "Even though we have quite a complex codebase, Vitaly was able to figure it out and make excellent progress almost immediately. I would certainly recommend Vitaly as a very proficient JavaScript developer and architect.",
   },
   {
-    avatar: "/clients/dennis.png",
+    avatar: "/clients/dennis.webp",
     name: "Dennis Mueller",
     company: "Amie, CEO",
     feedback:
       "Vitaly is a great engineer, who knows his craft. He'll work hard with you on building something that lasts. We feel very fortunate to work with him on a daily basis. He's quick to learn anything and will do a great job with whatever you have him work on.",
   },
   {
-    avatar: "/clients/braden.jpeg",
+    avatar: "/clients/braden.webp",
     name: "Braden Ericson",
     company: "Sparrow Charts, Founder",
     feedback:
       "Vitaly is the only freelancer I can confidently recommend to anyone seeking help with their engineering work. If I had the money, I’d pay him whatever he wanted and keep him full-time, but I’m not there yet.",
   },
   {
-    avatar: "/clients/ash.jpeg",
+    avatar: "/clients/ash.webp",
     name: "Ash Sheikh",
     company: "NextHQ, Designer",
     feedback:
       "Vitaly is very skilled and reliable. He's able to understand the goals of the business, ask right questions and work with existing codebases. His frontend skills are great which is rare for someone who's also good with backend. I really appreciate working with him.",
   },
   {
-    avatar: "/clients/liccy.png",
+    avatar: "/clients/liccy.webp",
     name: "Liccy Fuentes",
     company: "InkSkill, CEO",
     feedback:
       "Vitaly is a top tier developer, reliable, flexible and very committed to what he does. Always keeping his mind on the game, even when under pressure he's able to keep team morale up and deliver without altering the quality of his output.",
   },
   {
-    avatar: "/clients/denis.png",
+    avatar: "/clients/denis.webp",
     name: "Denis Frolov",
     company: "Songsterr, CEO",
     feedback: "Vitaly is an outstanding freelancer. Hire him if you can.",

@@ -15,7 +15,7 @@ export function FeaturedWork() {
       </h2>
       <ShowcaseItem
         className="bg-[#FFF0F0] text-[#1D0B00]"
-        bgImage="/portfolio/amie/showcase-bg@3x.jpg"
+        bgImage="/portfolio/amie/showcase-bg.webp"
       >
         <Image
           src="/portfolio/amie/logo.svg"
@@ -24,17 +24,23 @@ export function FeaturedWork() {
           alt="Amie"
         />
         <p>
-          Amie is a Calendar application for managing your events, which is
-          quite nice and joyful. <br />
+          <a
+            className="text-primary-600 font-medium hover:underline"
+            href="https://amie.so"
+            target="_blank"
+          >
+            Amie
+          </a>{" "}
+          is a joyful productivity application that combines calendar, todos and
+          many more. Words can't convey it, you need to see this beauty with
+          your own eyes.
           <br />
-          One of the best projects I ever worked on. I wish them only success,
-          and hope to see them someday again.
         </p>
       </ShowcaseItem>
 
       <ShowcaseItem
         className="bg-[#493D30] text-[#F0EBE8]"
-        bgImage="/portfolio/carient/showcase-bg@3x.jpg"
+        bgImage="/portfolio/carient/showcase-bg.webp"
       >
         <Image
           src="/portfolio/carient/logo.svg"
@@ -43,17 +49,14 @@ export function FeaturedWork() {
           alt="Carient"
         />
         <p>
-          Amie is a Calendar application for managing your events, which is
-          quite nice and joyful. <br />
-          <br />
-          One of the best projects I ever worked on. I wish them only success,
-          and hope to see them someday again.
+          Custom e-commerce solution for selling personalized skincare products
+          via subscription-based model
         </p>
       </ShowcaseItem>
 
       <ShowcaseItem
         className="bg-[#282832] text-[#F0EBE8]"
-        bgImage="/portfolio/livejam/showcase-bg@3x.jpg"
+        bgImage="/portfolio/livejam/showcase-bg.webp"
       >
         <Image
           src="/portfolio/livejam/logo.png"
@@ -62,11 +65,9 @@ export function FeaturedWork() {
           alt=""
         />
         <p>
-          Amie is a Calendar application for managing your events, which is
-          quite nice and joyful. <br />
+          LiveJam is a music player based on YouTube API and their embedded
+          player. Think it like Spotify with a video player. <br />
           <br />
-          One of the best projects I ever worked on. I wish them only success,
-          and hope to see them someday again.
         </p>
       </ShowcaseItem>
     </Container>
