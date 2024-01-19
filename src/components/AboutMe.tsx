@@ -10,7 +10,7 @@ export function AboutMe() {
     >
       <RadialGradiendBg />
 
-      <div className="mx-auto max-w-[740px] flex flex-col items-center relative">
+      <div className="mx-auto max-w-[740px] pb-5 flex flex-col items-center relative">
         <Avatar className="w-36 h-36">
           <AvatarImage src="/me.jpg" alt="Vitaly" />
         </Avatar>
