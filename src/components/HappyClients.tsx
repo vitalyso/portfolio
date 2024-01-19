@@ -46,7 +46,7 @@ export function HappyClients() {
   return (
     <section
       id="feedback"
-      className="w-full max-w-screen-lg mx-auto py-10 px-5 md:pt-80 md:pb-0 flex flex-col items-center gap-5"
+      className="w-full max-w-screen-lg mx-auto py-10 px-5 md:pt-40 md:pb-0 flex flex-col items-center gap-5"
     >
       <h2 className="text-white text-4xl font-bold font-title">
         Happy Clients

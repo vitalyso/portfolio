@@ -12,8 +12,8 @@ export function FeaturedWork() {
         Featured Work
       </h2>
       <ShowcaseItem
-        className="bg-[#fafafc] text-[#1D0B00]"
-        bgImage="/portfolio/amie/showcase-bg.jpg"
+        className="bg-[#FFF0F0] text-[#1D0B00]"
+        bgImage="/portfolio/amie/showcase-bg@3x.jpg"
       >
         <Image
           src="/portfolio/amie/logo.svg"
@@ -32,7 +32,7 @@ export function FeaturedWork() {
 
       <ShowcaseItem
         className="bg-[#493D30] text-[#F0EBE8]"
-        bgImage="/portfolio/carient/showcase-bg.jpg"
+        bgImage="/portfolio/carient/showcase-bg@3x.jpg"
       >
         <Image
           src="/portfolio/carient/logo.svg"
@@ -51,7 +51,7 @@ export function FeaturedWork() {
 
       <ShowcaseItem
         className="bg-[#282832] text-[#F0EBE8]"
-        bgImage="/portfolio/livejam/showcase-bg.jpg"
+        bgImage="/portfolio/livejam/showcase-bg@3x.jpg"
       >
         <Image
           src="/portfolio/livejam/logo.png"
@@ -83,18 +83,23 @@ function ShowcaseItem({
   return (
     <div
       className={cn(
-        "flex flex-col h-[300px] w-full md:flex-row items-center justify-between rounded-xl overflow-hidden shadow-lg relative select-none",
+        "group flex flex-col md:h-[300px] w-full md:flex-row items-center justify-between rounded-xl overflow-hidden relative select-none",
         className
       )}
     >
-      <div className="max-w-[400px] font-sm px-5 md:px-10 py-5 relative z-10 flex flex-col gap-4 font-light">
+      <div className="max-w-[400px] font-sm px-5 md:px-10 pt-7 pb-5 md:py-5 relative z-10 flex flex-col gap-4 font-light">
         {children}
       </div>
-      <img
-        className="w-full md:w-auto object-contain object-right-top"
-        src={bgImage}
-        alt="Showcase Image"
-      />
+      <div className="h-52 w-full md:w-1/2 md:h-full">
+        <div className="h-full w-full md:h-[512px] md:w-[512px] md:rotate-12 md:-top-10 md:right-0 md:group-hover:-right-5 relative  md:scale-110 group-hover:rotate-0 md:group-hover:scale-[0.85] transition-all duration-500">
+          <Image
+            className="object-cover object-right-top"
+            src={bgImage}
+            alt="Showcase Image"
+            fill
+          />
+        </div>
+      </div>
     </div>
   );
 }
