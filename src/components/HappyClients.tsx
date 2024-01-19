@@ -1,3 +1,5 @@
+import { Container } from "~/components/utils/Container";
+
 const clients = [
   {
     avatar: "/clients/bruce.jpeg",
@@ -44,9 +46,10 @@ const clients = [
 
 export function HappyClients() {
   return (
-    <section
+    <Container
       id="feedback"
-      className="w-full max-w-screen-lg mx-auto py-10 px-5 md:pt-40 md:pb-0 flex flex-col items-center gap-5"
+      as="section"
+      className="py-10 md:pt-40 md:pb-0 flex flex-col items-center gap-5"
     >
       <h2 className="text-white text-4xl font-bold font-title">
         Happy Clients
@@ -57,7 +60,7 @@ export function HappyClients() {
           <ClientFeedback key={client.avatar} {...client} />
         ))}
       </div>
-    </section>
+    </Container>
   );
 }
 

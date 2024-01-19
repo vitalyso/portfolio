@@ -1,12 +1,14 @@
 import * as React from "react";
 import Image from "next/image";
 import { cn } from "~/lib/utils";
+import { Container } from "~/components/utils/Container";
 
 export function FeaturedWork() {
   return (
-    <section
+    <Container
       id="work"
-      className="w-full max-w-screen-lg mx-auto flex flex-col items-center gap-5 py-10 px-5 md:pt-80 md:pb-0"
+      as="section"
+      className="flex flex-col items-center gap-5 py-10 md:pt-80 md:pb-0"
     >
       <h2 className="text-white text-4xl font-bold font-title">
         Featured Work
@@ -67,7 +69,7 @@ export function FeaturedWork() {
           and hope to see them someday again.
         </p>
       </ShowcaseItem>
-    </section>
+    </Container>
   );
 }
 

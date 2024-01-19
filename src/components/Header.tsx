@@ -4,6 +4,7 @@ import * as React from "react";
 import { Logo } from "~/components/Logo";
 import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
+import { Container } from "~/components/utils/Container";
 
 const navigation = [
   { label: "About", name: "about" },
@@ -74,9 +75,10 @@ export function Header() {
   };
 
   return (
-    <header className="px-5 md:px-8 md:fixed left-0 right-0 top-0 md:bg-background/90 z-20 md:backdrop-blur-md">
-      <nav
-        className="mx-auto flex max-w-screen-lg items-center justify-between py-5 relative"
+    <header className="md:fixed left-0 right-0 top-0 md:bg-background/90 z-20 md:backdrop-blur-md">
+      <Container
+        as="nav"
+        className="flex items-center justify-between py-5 relative"
         aria-label="Global"
       >
         <div className="flex md:flex-1">
@@ -99,7 +101,7 @@ export function Header() {
         <div className="flex flex-1 items-center justify-end gap-x-6">
           <Button size="lg">Hire me</Button>
         </div>
-      </nav>
+      </Container>
     </header>
   );
 }
