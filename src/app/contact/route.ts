@@ -8,12 +8,15 @@ export async function POST(request: Request) {
     message: formData.get("message"),
   };
 
+  const slackUrl = process.env.SLACK_WEBHOOK;
   const payload = {
     text: `New message from ${data.name} <${data.email}>: \n${data.message}`,
   };
 
   try {
-    await fetch(process.env.SLACK_WEBHOOK, {
+    if (!slackUrl) throw new Error("Missing Slack Webhook URL");
+
+    await fetch(slackUrl, {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
