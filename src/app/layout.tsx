@@ -1,4 +1,7 @@
+import * as React from "react";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Mukta_Mahee, Montserrat, Cormorant_Garamond } from "next/font/google";
 import { cn } from "~/lib/utils";
 import "./globals.css";
@@ -44,6 +47,8 @@ export default function RootLayout({
       <body
         className={cn(bodyFont.variable, heroFont.variable, titleFont.variable)}
       >
+        <SpeedInsights />
+        <Analytics />
         {children}
       </body>
     </html>
