@@ -5,6 +5,8 @@ import { Logo } from "~/components/Logo";
 import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 import { Container } from "~/components/utils/Container";
+import { useNavClick } from "~/hooks/useNavClick";
+import { NavButton } from "~/components/NavButton";
 
 const navigation = [
   { label: "About", name: "about" },
@@ -99,7 +101,9 @@ export function Header() {
           ))}
         </div>
         <div className="flex flex-1 items-center justify-end gap-x-6">
-          <Button size="lg">Hire me</Button>
+          <NavButton anchor="contact" size="lg">
+            Hire me
+          </NavButton>
         </div>
       </Container>
     </header>
@@ -115,22 +119,7 @@ function NavLink({
   children: string;
   active: boolean;
 }) {
-  const [anchorTarget, setAnchorTarget] = React.useState<HTMLElement | null>(
-    null
-  );
-
-  React.useEffect(() => {
-    setAnchorTarget(document.getElementById(name));
-  }, [name]);
-
-  const handleClick = (event: React.MouseEvent) => {
-    event.preventDefault();
-    anchorTarget?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
-  };
+  const handleClick = useNavClick(name);
 
   return (
     <a

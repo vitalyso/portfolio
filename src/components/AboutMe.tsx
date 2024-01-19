@@ -1,6 +1,6 @@
-import { Button } from "~/components/ui/button";
 import { Avatar, AvatarImage } from "~/components/ui/avatar";
 import { RadialGradiendBg } from "~/components/RadialGradiendBg";
+import { NavButton } from "~/components/NavButton";
 
 export function AboutMe() {
   return (
@@ -37,9 +37,9 @@ export function AboutMe() {
           things happen together! 🚀
         </p>
 
-        <Button size="lg" className="w-full md:w-auto">
+        <NavButton anchor="contact" size="lg" className="w-full md:w-auto">
           Let's chat
-        </Button>
+        </NavButton>
       </div>
     </section>
   );
