@@ -20,8 +20,11 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  font-family: var(--font-body);
   background: rgb(var(--background-start-rgb));
+}
+
+main {
+  font-family: var(--font-body);
 }
 
 img {

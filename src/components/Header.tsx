@@ -1,8 +1,5 @@
-"use client";
-
 import * as React from "react";
 import { Logo } from "~/components/Logo";
-import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 import { Container } from "~/components/utils/Container";
 import { useNavClick } from "~/hooks/useNavClick";
@@ -84,7 +81,7 @@ export function Header() {
         aria-label="Global"
       >
         <div className="flex md:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="/#" className="-m-1.5 p-1.5">
             <span className="sr-only">Logo</span>
             <Logo className="text-primary-500 w-10 h-10" />
           </a>

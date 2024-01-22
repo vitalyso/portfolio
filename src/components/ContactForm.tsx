@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import { cn } from "~/lib/utils";
 import { Input } from "~/components/ui/input";
@@ -121,9 +119,9 @@ function FormSent() {
 }
 
 async function sendMessage(formData: FormData) {
-  const response = await fetch("/contact", {
+  const response = await fetch("/api/contact", {
     method: "POST",
-    body: formData,
+    body: JSON.stringify(Object.fromEntries(formData)),
   });
 
   return response.json();

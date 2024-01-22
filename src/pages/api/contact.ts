@@ -1,12 +1,17 @@
-export const dynamic = "force-dynamic"; // defaults to auto
-export async function POST(request: Request) {
-  const formData = await request.formData();
+import type { NextApiRequest, NextApiResponse } from "next";
 
-  const data = {
-    name: formData.get("name"),
-    email: formData.get("email"),
-    message: formData.get("message"),
-  };
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const data = JSON.parse(req.body);
+
+  if (!data.email || !data.name || !data.message) {
+    return res.status(400).json({
+      sent: false,
+      error: "Missing field(s)",
+    });
+  }
 
   const slackUrl = process.env.SLACK_WEBHOOK;
   const payload = {
@@ -24,12 +29,11 @@ export async function POST(request: Request) {
       },
     });
 
-    return Response.json({
+    return res.status(200).json({
       sent: true,
     });
   } catch (err) {
-    console.error(err);
-    return Response.json({
+    return res.status(500).json({
       sent: false,
       error: "Server error. Please try again later",
     });
