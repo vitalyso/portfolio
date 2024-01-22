@@ -23,22 +23,16 @@ export function AboutMe() {
           Hi, I’m Vitaly
         </div>
 
-        <h1 className="text-center text-white text-xl md:text-5xl font-semibold font-hero leading-tight">
+        <h1 className="text-center text-white text-xl my-5 md:text-5xl font-semibold font-hero leading-tight">
           I build complex modern apps while keeping it simple
         </h1>
 
         <p className="my-4 text-center text-white/90 text-base font-light">
-          Crafting modern apps with a hint of simplicity is my thing. With solid
-          12+ years in professional software development, I've mastered the
-          skill of creating detailed web-based applications. While I've been
-          immersed in frontend development for the past 8 years, I'm also no
-          stranger to the backend scene when it comes calling.
-          <br />
-          <br />I believe in continual growth, constantly exploring the latest
-          approaches, best practices, and cutting-edge technologies. Your
-          project is my focus, and I'm dedicated to making it a success. Ready
-          to dive in? Share a bit about your project below, and let's make
-          things happen together! 🚀
+          A software developer with 12+ years in crafting high quality modern
+          apps. Specializing in frontend for 8 years, I seamlessly blend it with
+          backend expertise. Committed to constant growth, I'm always exploring
+          the latest in tech to ensure your project's success. Excited to hear
+          about your project – let's make things happen together! 🚀
         </p>
 
         <NavButton anchor="contact" size="lg" className="w-full md:w-auto">
