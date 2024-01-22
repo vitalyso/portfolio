@@ -29,10 +29,11 @@ export function AboutMe() {
 
         <p className="my-4 text-center text-white/90 text-base font-light">
           A software developer with 12+ years in crafting high quality modern
-          apps. Specializing in frontend for 8 years, I seamlessly blend it with
-          backend expertise. Committed to constant growth, I'm always exploring
-          the latest in tech to ensure your project's success. Excited to hear
-          about your project – let's make things happen together! 🚀
+          apps. Specializing in frontend for the last 8 years, I seamlessly
+          blend it with backend expertise. Committed to constant growth, I'm
+          always exploring the latest in tech to ensure your project's success.
+          Excited to hear about your project – let's make things happen
+          together! 🚀
         </p>
 
         <NavButton anchor="contact" size="lg" className="w-full md:w-auto">
