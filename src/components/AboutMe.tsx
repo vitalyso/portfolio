@@ -10,7 +10,7 @@ export function AboutMe() {
     >
       <RadialGradiendBg />
 
-      <div className="mx-auto max-w-[740px] pb-5 flex flex-col items-center relative">
+      <div className="mx-auto max-w-[600px] pb-5 flex flex-col items-center relative">
         <Image
           className="w-36 h-36 rounded-full"
           src="/me.webp"
@@ -23,11 +23,13 @@ export function AboutMe() {
           Hi, I’m Vitaly
         </div>
 
-        <h1 className="text-center text-white text-xl my-5 md:text-5xl font-semibold font-hero leading-tight">
-          I build complex modern apps while keeping it simple
+        <h1 className="text-center text-white text-3xl my-5 md:text-5xl font-semibold font-hero leading-tight">
+          I build complex <br className="hidden md:inline" />
+          modern apps while
+          <br className="hidden md:inline" /> keeping it simple
         </h1>
 
-        <p className="my-4 text-center text-white/90 text-base font-light">
+        <p className="md:my-5 text-center text-white/90 text-base font-light">
           A software developer with 12+ years in crafting high quality modern
           apps. Specializing in frontend for the last 8 years, I seamlessly
           blend it with backend expertise. Committed to constant growth, I'm
@@ -36,7 +38,7 @@ export function AboutMe() {
           together! 🚀
         </p>
 
-        <NavButton anchor="contact" size="lg" className="w-full md:w-auto">
+        <NavButton anchor="contact" size="lg" className="mt-5 w-full md:w-auto">
           Let's chat
         </NavButton>
       </div>
