@@ -2,7 +2,7 @@ import * as React from "react";
 import { Logo } from "~/components/Logo";
 import { cn } from "~/lib/utils";
 import { Container } from "~/components/utils/Container";
-import { useNavClick } from "~/hooks/useNavClick";
+import { navigateTo, useNavClick } from "~/hooks/useNavClick";
 import { NavButton } from "~/components/NavButton";
 
 const navigation = [
@@ -30,6 +30,13 @@ export function Header() {
       subtree: true,
     });
     window.addEventListener("scroll", handleScroll);
+  }, []);
+
+  React.useEffect(() => {
+    if (window.location.hash) {
+      const section = window.location.hash.slice(1);
+      navigateTo(section);
+    }
   }, []);
 
   const getAnchorPoints = () => {

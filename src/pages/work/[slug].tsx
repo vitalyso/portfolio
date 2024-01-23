@@ -1,16 +1,17 @@
+import * as React from "react";
 import Link from "next/link";
 import { m } from "framer-motion";
 import { IconCornerArrow } from "~/components/icons/IconCornerArrow";
-import * as React from "react";
+import { SocialMedia } from "~/components/contact-me/SocialMedia";
 
 const data = {
   url: "https://amie.so",
   title: "Amie",
   content:
-    "Boys migas charcoal 90's you normcore. Chillwave pin farm-to-table\nvice put. Pack yes carry aesthetic migas ugh. Listicle beer lo-fi\ntile pabst microdosing bottle. Gastropub slow-carb scenester\ncoloring hot affogato quinoa sustainable selfies lomo.\n\nBoys migas charcoal 90's you normcore. Chillwave pin farm-to-table\nvice put. Pack yes carry aesthetic migas ugh. Listicle beer lo-fi\ntile pabst microdosing bottle. Gastropub slow-carb scenester\ncoloring hot affogato quinoa sustainable selfies lomo.",
+    "Boys migas charcoal 90's you normcore. Chillwave pin farm-to-table vice put. Pack yes carry aesthetic migas ugh. Listicle beer lo-fi tile pabst microdosing bottle. Gastropub slow-carb scenester coloring hot affogato quinoa sustainable selfies lomo.\n\nBoys migas charcoal 90's you normcore. Chillwave pin farm-to-table vice put. Pack yes carry aesthetic migas ugh. Listicle beer lo-fi tile pabst microdosing bottle. Gastropub slow-carb scenester coloring hot affogato quinoa sustainable selfies lomo.",
   skills: ["React", "Electron", "Node", "Tailwind", "Framer Motion", "Next.js"],
   scope: ["Frontend", "Backend", "Electron", "CI/CD", "DevOps", "Code Review"],
-  details: ["2021-2023"],
+  details: ["2021 - 2023"],
   screenshots: [
     "/portfolio/livejam/1.png",
     "/portfolio/livejam/2.png",
@@ -39,12 +40,19 @@ export default function Work() {
         }}
         className="w-1/2 max-w-[50%] py-20 px-10"
       >
-        <div className="sticky top-40 max-w-screen-sm ml-auto">
-          <Link className="text-primary-500 relative hover:underline" href="/">
-            ← Back
-          </Link>
+        <div className="sticky top-40 max-w-screen-sm mx-auto">
+          <div className="flex items-center justify-between">
+            <Link
+              className="text-primary-500 relative hover:underline"
+              href="/#work"
+            >
+              ← Back
+            </Link>
+          </div>
 
-          <h1 className="font-black text-5xl leading-normal">{data.title}</h1>
+          <h1 className="font-hero font-semibold text-5xl leading-normal">
+            {data.title}
+          </h1>
           <p className="font-light whitespace-pre-line">{data.content}</p>
 
           <div className="flex pt-5 font-light">
@@ -53,7 +61,7 @@ export default function Work() {
                 className="font-bold text-xl mb-1 font-title -ml-1"
                 index={-1}
               >
-                Skills
+                Core tools
               </AnimatedListItem>
               {data.skills.map((item, index) => (
                 <AnimatedListItem key={item} index={index}>
@@ -95,7 +103,7 @@ export default function Work() {
 
           {data.url && (
             <m.a
-              className="inline-flex items-center gap-1 mt-10 text-xl text-primary-500 font-bold hover:underline"
+              className="inline-flex text-lg items-center gap-1 mt-6 text-primary-500 font-bold hover:underline"
               target="_blank"
               href={data.url}
               initial={{ opacity: 0, x: -40 }}
@@ -108,6 +116,27 @@ export default function Work() {
               Open project <IconCornerArrow className="w-5 h-5 stroke-1" />
             </m.a>
           )}
+
+          <m.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.75,
+              delay: 2.2,
+            }}
+            className="mt-20"
+          >
+            <h1 className="font-title font-black text-2xl leading-normal">
+              Got an idea?{" "}
+              <Link
+                className="text-primary-500 hover:underline"
+                href={`/#contact`}
+              >
+                Let's talk.
+              </Link>
+            </h1>
+            <SocialMedia />
+          </m.div>
         </div>
       </m.div>
       <div className="w-1/2 max-w-[50%] flex flex-col gap-5 p-5 relative">
@@ -161,7 +190,7 @@ function AnimatedListItem({
     <m.li
       className={className}
       initial={{
-        y: -60,
+        y: -40,
         opacity: 0,
       }}
       animate={{ y: 0, opacity: 1 }}

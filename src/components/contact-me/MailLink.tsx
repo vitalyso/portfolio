@@ -13,8 +13,8 @@ export function MailLink() {
 
   return (
     <a
-      className="hover:text-primary-500"
-      href={`mailto:${mailTo}?subject=My Fantastic Idea`}
+      className="hover:text-primary-500 transition-colors duration-300"
+      href={`mailto:${mailTo}?subject=My Fantastic Idea&body=Hi Vitaly, I have a fantastic idea, can you help me?`}
     >
       <IconMail className="h-4 w-4" />
     </a>

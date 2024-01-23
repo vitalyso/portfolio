@@ -18,3 +18,14 @@ export function useNavClick(name: string) {
     });
   };
 }
+
+export function navigateTo(name: string) {
+  const element = document.getElementById(name);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+  }
+}
