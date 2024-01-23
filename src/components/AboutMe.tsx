@@ -3,7 +3,7 @@ import { RadialGradiendBg } from "~/components/RadialGradiendBg";
 import { NavButton } from "~/components/NavButton";
 import Image from "next/image";
 
-const ANIMATION_DURATION = 0.5;
+const ANIMATION_DURATION = 0.75;
 
 export function AboutMe() {
   return (
@@ -75,7 +75,7 @@ export function AboutMe() {
         <m.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: ANIMATION_DURATION, delay: 0.7 }}
+          transition={{ duration: ANIMATION_DURATION, delay: 1.2 }}
         >
           <NavButton
             anchor="contact"

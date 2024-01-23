@@ -1,3 +1,4 @@
+import { m } from "framer-motion";
 import { ContactForm } from "~/components/ContactForm";
 import { SocialMedia } from "~/components/SocialMedia";
 
@@ -7,7 +8,25 @@ export function ContactMe() {
       id="contact"
       className="w-full max-w-screen-lg mx-auto pt-10 pb-5 px-5 md:pt-40 md:pb-0 grid grid-cols-1 md:grid-cols-2 gap-5"
     >
-      <div className="md:w-[400px] flex flex-col gap-2.5 select-none">
+      <m.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        variants={{
+          visible: {
+            x: 0,
+            opacity: 1,
+            scale: 1,
+          },
+          hidden: {
+            x: -40,
+            opacity: 0,
+            scale: 1,
+          },
+        }}
+        className="md:w-[400px] flex flex-col gap-2.5 select-none"
+      >
         <h2 className="text-white text-4xl font-bold font-title">
           Let’s build something fantastic together
         </h2>
@@ -24,11 +43,28 @@ export function ContactMe() {
           when you are. Let's build something fantastic! 🌟
         </p>
         <SocialMedia className="hidden md:flex" />
-      </div>
-      <div>
+      </m.div>
+      <m.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        variants={{
+          visible: {
+            x: 0,
+            opacity: 1,
+            scale: 1,
+          },
+          hidden: {
+            x: 40,
+            opacity: 0,
+            scale: 1,
+          },
+        }}
+      >
         <ContactForm />
         <SocialMedia className="md:hidden w-full justify-center mt-[60px]" />
-      </div>
+      </m.div>
     </section>
   );
 }

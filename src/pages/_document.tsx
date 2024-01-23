@@ -8,7 +8,6 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="icon" href="/favicon.svg" />
-        <title>Vitaly Sivkov</title>
       </Head>
       <body>
         <SpeedInsights />

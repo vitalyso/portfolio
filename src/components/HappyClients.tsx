@@ -1,3 +1,4 @@
+import { m } from "framer-motion";
 import { Container } from "~/components/utils/Container";
 
 const clients = [
@@ -56,17 +57,38 @@ export function HappyClients() {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {clients.map((client) => (
-          <ClientFeedback key={client.avatar} {...client} />
+        {clients.map((client, index) => (
+          <ClientFeedback key={client.avatar} index={index} {...client} />
         ))}
       </div>
     </Container>
   );
 }
 
-function ClientFeedback({ avatar, name, company, feedback }: any) {
+function ClientFeedback({ avatar, name, company, feedback, index }: any) {
+  const isEven = index % 2 === 0;
+  const row = Math.floor(index / 2);
+
   return (
-    <div className="p-5 rounded-xl bg-white/10 select-none">
+    <m.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.1 + (row - 1) * 0.2 }}
+      variants={{
+        visible: {
+          x: 0,
+          opacity: 1,
+          scale: 1,
+        },
+        hidden: {
+          x: isEven ? -40 : 40,
+          opacity: 0,
+          scale: 1.1,
+        },
+      }}
+      className="p-5 rounded-xl bg-white/10 select-none"
+    >
       <div className="flex gap-2.5">
         <img className="w-10 h-10 rounded-full" src={avatar} alt={name} />
         <div className="flex-col justify-start items-start inline-flex">
@@ -79,6 +101,6 @@ function ClientFeedback({ avatar, name, company, feedback }: any) {
         </div>
       </div>
       <div className="mt-3 font-light text-sm">“{feedback}”</div>
-    </div>
+    </m.div>
   );
 }

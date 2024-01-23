@@ -1,9 +1,9 @@
 import "~/styles/globals.css";
 import type { AppProps } from "next/app";
-import type { Metadata } from "next";
 import { Cormorant_Garamond, Montserrat, Mukta_Mahee } from "next/font/google";
 import { Motion } from "~/components/utils/Motion";
 import { cn } from "~/lib/utils";
+import { AnimatePresence } from "framer-motion";
 
 const heroFont = Montserrat({
   weight: ["400", "600", "900"],
@@ -26,12 +26,7 @@ const titleFont = Cormorant_Garamond({
   variable: "--font-title",
 });
 
-export const metadata: Metadata = {
-  title: "Vitaly Sivkov",
-  description: "Software Engineer",
-};
-
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <Motion>
       <main
@@ -42,7 +37,12 @@ export default function App({ Component, pageProps }: AppProps) {
           titleFont.variable
         )}
       >
-        <Component {...pageProps} />
+        <AnimatePresence
+          mode="wait"
+          onExitComplete={() => window.scrollTo(0, 0)}
+        >
+          <Component key={router.route} {...pageProps} />
+        </AnimatePresence>
       </main>
     </Motion>
   );
