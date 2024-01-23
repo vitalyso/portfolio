@@ -3,7 +3,7 @@ import { cn } from "~/lib/utils";
 import { IconGitHub } from "~/components/icons/IconGitHub";
 import { IconTwitter } from "~/components/icons/IconTwitter";
 import { IconLinkedIn } from "~/components/icons/IconLinkedIn";
-import { MailLink } from "~/components/MailLink";
+import { MailLink } from "./MailLink";
 
 export function SocialMedia({ className }: { className?: string }) {
   return (

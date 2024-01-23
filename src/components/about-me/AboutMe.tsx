@@ -1,7 +1,7 @@
-import { m } from "framer-motion";
-import { RadialGradiendBg } from "~/components/RadialGradiendBg";
-import { NavButton } from "~/components/NavButton";
 import Image from "next/image";
+import { m } from "framer-motion";
+import { NavButton } from "~/components/NavButton";
+import { RadialGradientBg } from "./RadialGradientBg";
 
 const ANIMATION_DURATION = 0.75;
 
@@ -11,7 +11,7 @@ export function AboutMe() {
       id="about"
       className="relative md:overflow-y-hidden py-10 px-5 md:pt-60 md:pb-0"
     >
-      <RadialGradiendBg />
+      <RadialGradientBg />
 
       <div className="mx-auto max-w-[620px] pb-5 flex flex-col items-center relative">
         <m.div
@@ -19,7 +19,6 @@ export function AboutMe() {
           animate={{ y: 0, opacity: 1 }}
           transition={{
             duration: ANIMATION_DURATION,
-            // delay: 0.3,
           }}
         >
           <Image

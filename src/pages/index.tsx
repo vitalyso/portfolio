@@ -1,9 +1,9 @@
 import { m } from "framer-motion";
 import { Header } from "~/components/Header";
-import { AboutMe } from "~/components/AboutMe";
-import { FeaturedWork } from "~/components/FeaturedWork";
-import { HappyClients } from "~/components/HappyClients";
-import { ContactMe } from "~/components/ContactMe";
+import { AboutMe } from "~/components/about-me/AboutMe";
+import { FeaturedWork } from "~/components/featured-work/FeaturedWork";
+import { HappyClients } from "~/components/happy-clients/HappyClients";
+import { ContactMe } from "~/components/contact-me/ContactMe";
 import { Footer } from "~/components/Footer";
 
 export default function Home() {

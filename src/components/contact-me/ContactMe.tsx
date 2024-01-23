@@ -1,6 +1,6 @@
 import { m } from "framer-motion";
-import { ContactForm } from "~/components/ContactForm";
-import { SocialMedia } from "~/components/SocialMedia";
+import { ContactForm } from "./ContactForm";
+import { SocialMedia } from "./SocialMedia";
 
 export function ContactMe() {
   return (
