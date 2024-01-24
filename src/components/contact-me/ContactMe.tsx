@@ -1,18 +1,15 @@
 import { m } from "framer-motion";
 import { ContactForm } from "./ContactForm";
 import { SocialMedia } from "./SocialMedia";
-import { useIsMobile } from "~/hooks/useMediaQuery";
 
 export function ContactMe() {
-  const isMobile = useIsMobile();
-  const leftProps = getAnimationProps(true, isMobile);
-  const rightProps = getAnimationProps(false, isMobile);
+  const leftProps = getAnimationProps(true);
+  const rightProps = getAnimationProps(false);
 
   return (
     <section
-      key={String(isMobile)}
       id="contact"
-      className="w-full max-w-screen-lg mx-auto pt-10 pb-5 px-5 md:pt-40 md:pb-0 grid grid-cols-1 md:grid-cols-2 gap-5"
+      className="w-full max-w-screen-lg mx-auto pt-10 pb-5 px-5 md:pt-40 md:pb-0 grid grid-cols-1 md:grid-cols-2 gap-5 overflow-hidden"
     >
       <m.div
         {...leftProps}
@@ -43,11 +40,7 @@ export function ContactMe() {
   );
 }
 
-function getAnimationProps(left: boolean, mobile: boolean) {
-  if (mobile) {
-    return {};
-  }
-
+function getAnimationProps(left: boolean) {
   return {
     initial: "hidden",
     whileInView: "visible",
