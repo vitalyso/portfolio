@@ -3,6 +3,7 @@ import Link from "next/link";
 import { m } from "framer-motion";
 import { IconCornerArrow } from "~/components/icons/IconCornerArrow";
 import { SocialMedia } from "~/components/contact-me/SocialMedia";
+import { cn } from "~/lib/utils";
 
 const data = {
   url: "https://amie.so",
@@ -25,7 +26,7 @@ const LIST_ANIMATION_DELAY = 0.5;
 export default function Work() {
   return (
     <m.div
-      className="flex w-full min-h-screen"
+      className="flex flex-col md:flex-row w-full min-h-screen"
       exit={{
         y: 20,
         opacity: 0,
@@ -38,9 +39,9 @@ export default function Work() {
         transition={{
           duration: 0.75,
         }}
-        className="w-1/2 max-w-[50%] py-20 px-10"
+        className="py-10 px-5 md:w-1/2 md:py-20 md:px-10"
       >
-        <div className="sticky top-40 max-w-screen-sm mx-auto">
+        <div className="md:sticky md:top-40 max-w-screen-sm mx-auto">
           <div className="flex items-center justify-between">
             <Link
               className="text-primary-500 relative hover:underline"
@@ -55,66 +56,43 @@ export default function Work() {
           </h1>
           <p className="font-light whitespace-pre-line">{data.content}</p>
 
-          <div className="flex pt-5 font-light">
-            <ul className="border-t-4 border-primary-500 w-40 px-5 pt-4">
-              <AnimatedListItem
-                className="font-bold text-xl mb-1 font-title -ml-1"
-                index={-1}
-              >
-                Core tools
-              </AnimatedListItem>
-              {data.skills.map((item, index) => (
-                <AnimatedListItem key={item} index={index}>
-                  {item}
-                </AnimatedListItem>
-              ))}
-            </ul>
-
-            <ul className="border-t-2 px-5 border-primary-600 w-40 pt-4">
-              <AnimatedListItem
-                className="font-bold text-xl mb-1 font-title -ml-1"
-                index={-1}
-                baseDelay={0.2}
-              >
-                Scope
-              </AnimatedListItem>
-              {data.scope.map((item, index) => (
-                <AnimatedListItem baseDelay={0.2} key={item} index={index}>
-                  {item}
-                </AnimatedListItem>
-              ))}
-            </ul>
-
-            <ul className="border-t px-5 border-primary-700 w-40 pt-4">
-              <AnimatedListItem
-                className="font-bold text-xl mb-1 font-title -ml-1"
-                baseDelay={0.4}
-                index={-1}
-              >
-                Timeframe
-              </AnimatedListItem>
-              {data.details.map((item, index) => (
-                <AnimatedListItem baseDelay={0.4} key={item} index={index}>
-                  {item}
-                </AnimatedListItem>
-              ))}
-            </ul>
+          <div className="flex flex-col md:flex-row pt-5 font-light">
+            <AnimatedList
+              className="border-t-4 border-primary-500"
+              title="Core tools"
+              items={data.skills}
+              baseDelay={0}
+            />
+            <AnimatedList
+              className="border-t-2 border-primary-600"
+              title="Scope"
+              items={data.scope}
+              baseDelay={0.2}
+            />
+            <AnimatedList
+              className="border-t border-primary-700"
+              title="Timeframe"
+              items={data.details}
+              baseDelay={0.4}
+            />
           </div>
 
           {data.url && (
-            <m.a
-              className="inline-flex text-lg items-center gap-1 mt-6 text-primary-500 font-bold hover:underline"
-              target="_blank"
-              href={data.url}
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 0.75,
-                delay: 2,
-              }}
-            >
-              Open project <IconCornerArrow className="w-5 h-5 stroke-1" />
-            </m.a>
+            <div className="text-center md:text-left">
+              <m.a
+                className="inline-flex text-lg items-center gap-1 mt-6 text-primary-500 font-bold hover:underline"
+                target="_blank"
+                href={data.url}
+                initial={{ opacity: 0, x: -40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 0.75,
+                  delay: 2,
+                }}
+              >
+                Open project <IconCornerArrow className="w-5 h-5 stroke-1" />
+              </m.a>
+            </div>
           )}
 
           <m.div
@@ -124,7 +102,7 @@ export default function Work() {
               duration: 0.75,
               delay: 2.2,
             }}
-            className="mt-20"
+            className="mt-32 flex flex-col items-center md:items-start"
           >
             <h1 className="font-title font-black text-2xl leading-normal">
               Got an idea?{" "}
@@ -139,7 +117,7 @@ export default function Work() {
           </m.div>
         </div>
       </m.div>
-      <div className="w-1/2 max-w-[50%] flex flex-col gap-5 p-5 relative">
+      <div className="hidden md:w-1/2 md:max-w-[50%] md:flex flex-col gap-5 p-5 relative">
         {data.screenshots.map((src) => (
           <m.div
             initial="hidden"
@@ -172,6 +150,41 @@ export default function Work() {
         ))}
       </div>
     </m.div>
+  );
+}
+
+function AnimatedList({
+  title,
+  items,
+  baseDelay = 0,
+  className,
+}: {
+  title: string;
+  items: string[];
+  baseDelay?: number;
+  className?: string;
+}) {
+  return (
+    <ul
+      className={cn(
+        "grid w-full grid-cols-2 md:block md:w-40 px-5 py-4",
+        className
+      )}
+    >
+      <AnimatedListItem
+        className="font-bold text-xl mb-1 font-title -ml-1"
+        index={-1}
+        baseDelay={baseDelay}
+      >
+        {title}
+      </AnimatedListItem>
+      <li className="md:hidden"></li>
+      {items.map((item, index) => (
+        <AnimatedListItem baseDelay={baseDelay} key={item} index={index}>
+          {item}
+        </AnimatedListItem>
+      ))}
+    </ul>
   );
 }
 
