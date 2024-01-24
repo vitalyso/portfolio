@@ -1,30 +1,21 @@
 import { m } from "framer-motion";
 import { ContactForm } from "./ContactForm";
 import { SocialMedia } from "./SocialMedia";
+import { useIsMobile } from "~/hooks/useMediaQuery";
 
 export function ContactMe() {
+  const isMobile = useIsMobile();
+  const leftProps = getAnimationProps(true, isMobile);
+  const rightProps = getAnimationProps(false, isMobile);
+
   return (
     <section
+      key={String(isMobile)}
       id="contact"
       className="w-full max-w-screen-lg mx-auto pt-10 pb-5 px-5 md:pt-40 md:pb-0 grid grid-cols-1 md:grid-cols-2 gap-5"
     >
       <m.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        variants={{
-          visible: {
-            x: 0,
-            opacity: 1,
-            scale: 1,
-          },
-          hidden: {
-            x: -40,
-            opacity: 0,
-            scale: 1,
-          },
-        }}
+        {...leftProps}
         className="md:w-[400px] flex flex-col gap-2.5 select-none"
       >
         <h2 className="text-white text-4xl font-bold font-title">
@@ -44,27 +35,35 @@ export function ContactMe() {
         </p>
         <SocialMedia className="hidden md:flex" />
       </m.div>
-      <m.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        variants={{
-          visible: {
-            x: 0,
-            opacity: 1,
-            scale: 1,
-          },
-          hidden: {
-            x: 40,
-            opacity: 0,
-            scale: 1,
-          },
-        }}
-      >
+      <m.div {...rightProps}>
         <ContactForm />
         <SocialMedia className="md:hidden w-full justify-center mt-[60px]" />
       </m.div>
     </section>
   );
+}
+
+function getAnimationProps(left: boolean, mobile: boolean) {
+  if (mobile) {
+    return {};
+  }
+
+  return {
+    initial: "hidden",
+    whileInView: "visible",
+    viewport: { once: true },
+    transition: { duration: 0.5, delay: 0.6 },
+    variants: {
+      visible: {
+        x: 0,
+        opacity: 1,
+        scale: 1,
+      },
+      hidden: {
+        x: left ? -40 : 40,
+        opacity: 0,
+        scale: 1,
+      },
+    },
+  };
 }

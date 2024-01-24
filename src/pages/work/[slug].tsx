@@ -3,7 +3,9 @@ import Link from "next/link";
 import { m } from "framer-motion";
 import { IconCornerArrow } from "~/components/icons/IconCornerArrow";
 import { SocialMedia } from "~/components/contact-me/SocialMedia";
-import { cn } from "~/lib/utils";
+import { Screenshots } from "~/components/work-details/Screenshots";
+import { AnimatedList } from "~/components/work-details/AnimatedList";
+import { useIsMobile } from "~/hooks/useMediaQuery";
 
 const data = {
   url: "https://amie.so",
@@ -21,11 +23,21 @@ const data = {
   ],
 };
 
-const LIST_ANIMATION_DELAY = 0.5;
-
 export default function Work() {
+  const isMobile = useIsMobile();
+  const variants = isMobile
+    ? {
+        hidden: { opacity: 0, y: -20 },
+        visible: { opacity: 1, y: 0 },
+      }
+    : {
+        hidden: { opacity: 0, x: -40 },
+        visible: { opacity: 1, x: 0 },
+      };
+
   return (
     <m.div
+      key={String(isMobile)}
       className="flex flex-col md:flex-row w-full min-h-screen"
       exit={{
         y: 20,
@@ -34,12 +46,11 @@ export default function Work() {
       }}
     >
       <m.div
-        initial={{ opacity: 0, x: -40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{
-          duration: 0.75,
-        }}
-        className="py-10 px-5 md:w-1/2 md:py-20 md:px-10"
+        initial="hidden"
+        animate="visible"
+        variants={variants}
+        transition={{ duration: 0.75 }}
+        className="py-10 px-5 md:w-1/2 md:max-w-[50%] md:py-20 md:px-10"
       >
         <div className="md:sticky md:top-40 max-w-screen-sm mx-auto">
           <div className="flex items-center justify-between">
@@ -54,6 +65,12 @@ export default function Work() {
           <h1 className="font-hero font-semibold text-5xl leading-normal">
             {data.title}
           </h1>
+
+          <Screenshots
+            className="max-w-100vw md:hidden mb-10"
+            images={data.screenshots}
+          />
+
           <p className="font-light whitespace-pre-line">{data.content}</p>
 
           <div className="flex flex-col md:flex-row pt-5 font-light">
@@ -117,103 +134,10 @@ export default function Work() {
           </m.div>
         </div>
       </m.div>
-      <div className="hidden md:w-1/2 md:max-w-[50%] md:flex flex-col gap-5 p-5 relative">
-        {data.screenshots.map((src) => (
-          <m.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-200px 0px 0px", amount: "some" }}
-            transition={{ duration: 0.75 }}
-            variants={{
-              visible: {
-                y: 0,
-                x: 0,
-                opacity: 1,
-                scale: 1,
-              },
-              hidden: {
-                y: 20,
-                x: 20,
-                opacity: 0,
-                scale: 1.1,
-              },
-            }}
-            key={src}
-            className="relative w-full"
-          >
-            <img
-              className="object-contain rounded-xl"
-              src={src}
-              alt="Screenshot"
-            />
-          </m.div>
-        ))}
-      </div>
+      <Screenshots
+        className="hidden md:flex md:w-1/2 md:max-w-[50%] md:p-5"
+        images={data.screenshots}
+      />
     </m.div>
-  );
-}
-
-function AnimatedList({
-  title,
-  items,
-  baseDelay = 0,
-  className,
-}: {
-  title: string;
-  items: string[];
-  baseDelay?: number;
-  className?: string;
-}) {
-  return (
-    <ul
-      className={cn(
-        "grid w-full grid-cols-2 md:block md:w-40 px-5 py-4",
-        className
-      )}
-    >
-      <AnimatedListItem
-        className="font-bold text-xl mb-1 font-title -ml-1"
-        index={-1}
-        baseDelay={baseDelay}
-      >
-        {title}
-      </AnimatedListItem>
-      <li className="md:hidden"></li>
-      {items.map((item, index) => (
-        <AnimatedListItem baseDelay={baseDelay} key={item} index={index}>
-          {item}
-        </AnimatedListItem>
-      ))}
-    </ul>
-  );
-}
-
-function AnimatedListItem({
-  children,
-  index,
-  className,
-  baseDelay = 0,
-}: {
-  baseDelay?: number;
-  children: React.ReactNode;
-  index: number;
-  className?: string;
-}) {
-  return (
-    <m.li
-      className={className}
-      initial={{
-        y: -40,
-        opacity: 0,
-      }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{
-        delay:
-          LIST_ANIMATION_DELAY + baseDelay + (data.skills.length - index) * 0.1,
-        duration: 0.5,
-      }}
-    >
-      {children}
-    </m.li>
   );
 }
