@@ -8,6 +8,7 @@ import { Screenshots } from "~/components/work-details/Screenshots";
 import { AnimatedList } from "~/components/work-details/AnimatedList";
 import { useIsMobile } from "~/hooks/useMediaQuery";
 import { requestPortfolio } from "~/lib/request-portfolio";
+import Head from "next/head";
 
 export default function Work({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const isMobile = useIsMobile();
@@ -31,6 +32,9 @@ export default function Work({ data }: InferGetServerSidePropsType<typeof getSer
         transition: { duration: 0.5 },
       }}
     >
+      <Head>
+        <title>Portfolio: {data.title}</title>
+      </Head>
       <m.div
         initial="hidden"
         animate="visible"

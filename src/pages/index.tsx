@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { m } from "framer-motion";
 import { Header } from "~/components/Header";
 import { AboutMe } from "~/components/about-me/AboutMe";
@@ -18,6 +19,9 @@ export default function Home() {
         },
       }}
     >
+      <Head>
+        <title>👨🏻‍💻Vitaly Sivkov | Software developer</title>
+      </Head>
       <Header />
       <AboutMe />
       <FeaturedWork />
