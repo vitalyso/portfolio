@@ -13,12 +13,12 @@ export function ContactMe() {
     >
       <m.div
         {...leftProps}
-        className="md:w-[400px] flex flex-col gap-2.5 select-none"
+        className="md:pr-4 flex flex-col gap-2.5 select-none"
       >
         <h2 className="text-white text-4xl font-bold font-title">
           Let’s build something fantastic together
         </h2>
-        <p className="font-light text-white/90">
+        <p className="font-light text-white/90 text-lg">
           Hey there! 🙋🏻‍♂️ Exciting times ahead! I'm thrilled that you've dropped
           by. Whether you've got a groundbreaking idea or just a spark of
           inspiration, I'm here to turn it into something extraordinary. Let's

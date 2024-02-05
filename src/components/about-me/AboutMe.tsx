@@ -61,7 +61,7 @@ export function AboutMe() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: ANIMATION_DURATION, delay: 0.3 }}
-          className="md:my-5 text-center text-white/90 text-base font-light"
+          className="md:my-5 text-center text-white/90 font-light text-lg"
         >
           A freelance software developer with 12+ years in crafting high quality
           modern apps. Specializing in frontend for the last 8 years, I

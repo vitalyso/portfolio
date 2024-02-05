@@ -10,7 +10,7 @@ export function SocialMedia({ className }: { className?: string }) {
     <div className={cn("flex gap-4 mt-2", className)}>
       <a
         className="hover:text-primary-500 transition-colors duration-300"
-        href="https://github.com/sivkoff"
+        href="https://github.com/vitalyso"
         target="_blank"
       >
         <IconGitHub className="h-4 w-4" />
