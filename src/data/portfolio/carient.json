@@ -1,0 +1,10 @@
+{
+  "featured": true,
+  "title": "Carient",
+  "url": "https://carientskin.com",
+  "scope": ["Frontend", "Backend", "Architect", "DevOps"],
+  "skills": ["TypeScript", "React", "Node.js", "Next.js", "Strapi", "Stripe Subscriptions"],
+  "details": ["2020-2021"],
+  "summary": "Carient is a custom e-commerce solution for selling personalized skincare products via subscription-based model",
+  "content": "Carient is a custom e-commerce solution for selling personalized skincare products via subscription-based model"
+}

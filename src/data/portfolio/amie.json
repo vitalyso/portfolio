@@ -1,0 +1,10 @@
+{
+  "featured": true,
+  "title": "Amie",
+  "url": "https://amie.so",
+  "scope": ["Frontend", "Backend", "Electron", "CI/CD", "DevOps", "Code Review"],
+  "skills": ["TypeScript", "React", "Node.js", "Electron", "GraphQL", "Next.js", "Tailwind", "Framer Motion", "Github Actions", "Postgres", "Google APIs"],
+  "details": ["2021-2023"],
+  "summary": "Amie is a joyful productivity application that combines calendar, todos and many more. Words can't convey it, you need to see this beauty with your own eyes.",
+  "content": "Amie is a joyful productivity application that combines calendar, todos and many more. Words can't convey it, you need to see this beauty with your own eyes."
+}

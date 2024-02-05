@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import Link from "next/link";
 import { m } from "framer-motion";
 import { IconCornerArrow } from "~/components/icons/IconCornerArrow";
@@ -6,24 +7,9 @@ import { SocialMedia } from "~/components/contact-me/SocialMedia";
 import { Screenshots } from "~/components/work-details/Screenshots";
 import { AnimatedList } from "~/components/work-details/AnimatedList";
 import { useIsMobile } from "~/hooks/useMediaQuery";
+import { requestPortfolio } from "~/lib/request-portfolio";
 
-const data = {
-  url: "https://amie.so",
-  title: "Amie",
-  content:
-    "Boys migas charcoal 90's you normcore. Chillwave pin farm-to-table vice put. Pack yes carry aesthetic migas ugh. Listicle beer lo-fi tile pabst microdosing bottle. Gastropub slow-carb scenester coloring hot affogato quinoa sustainable selfies lomo.\n\nBoys migas charcoal 90's you normcore. Chillwave pin farm-to-table vice put. Pack yes carry aesthetic migas ugh. Listicle beer lo-fi tile pabst microdosing bottle. Gastropub slow-carb scenester coloring hot affogato quinoa sustainable selfies lomo.",
-  skills: ["React", "Electron", "Node", "Tailwind", "Framer Motion", "Next.js"],
-  scope: ["Frontend", "Backend", "Electron", "CI/CD", "DevOps", "Code Review"],
-  details: ["2021 - 2023"],
-  screenshots: [
-    "/portfolio/livejam/1.png",
-    "/portfolio/livejam/2.png",
-    "/portfolio/livejam/3.png",
-    "/portfolio/livejam/4.png",
-  ],
-};
-
-export default function Work() {
+export default function Work({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const isMobile = useIsMobile();
   const variants = isMobile
     ? {
@@ -68,7 +54,7 @@ export default function Work() {
 
           <Screenshots
             className="max-w-100vw md:hidden mb-10"
-            images={data.screenshots}
+            images={data.images}
           />
 
           <p className="font-light whitespace-pre-line">{data.content}</p>
@@ -86,12 +72,12 @@ export default function Work() {
               items={data.scope}
               baseDelay={0.2}
             />
-            <AnimatedList
+            {data.details && <AnimatedList
               className="border-t border-primary-700"
               title="Timeframe"
               items={data.details}
               baseDelay={0.4}
-            />
+            />}
           </div>
 
           {data.url && (
@@ -136,8 +122,29 @@ export default function Work() {
       </m.div>
       <Screenshots
         className="hidden md:flex md:w-1/2 md:max-w-[50%] md:p-5"
-        images={data.screenshots}
+        images={data.images}
       />
     </m.div>
   );
 }
+
+
+type Data = {
+  url?: string
+  title: string
+  content: string
+  skills: string[]
+  scope: string[]
+  details: string[]
+  images: string[]
+}
+
+export const getServerSideProps = (async (ctx) => {
+  try {
+    const { slug } = ctx.params as { slug: string }
+    const data: Data = await requestPortfolio(slug)
+    return { props: { data } }
+  } catch (e) {
+    return { notFound: true }
+  }
+}) satisfies GetServerSideProps<{ data: Data }>

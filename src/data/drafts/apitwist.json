@@ -1,0 +1,8 @@
+{
+  "featured": true,
+  "title": "Carient",
+  "scope": ["Frontend", "Backend", "Architect", "DevOps"],
+  "skills": ["TypeScript", "React", "Node.js"],
+  "summary": "Custom subscription-based e-commerce solution with a recommendation system for selling skincare products",
+  "content": ""
+}

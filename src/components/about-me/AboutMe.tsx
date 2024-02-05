@@ -45,7 +45,7 @@ export function AboutMe() {
           transition={{ duration: ANIMATION_DURATION, delay: 0.2 }}
           className="text-center text-white text-3xl my-5 md:text-5xl font-black font-hero leading-tight"
         >
-          I{" "}
+          {/* From idea to launch to growth */}I{" "}
           <span className="bg-gradient-to-r from-primary-300 to-primary-500 bg-clip-text text-transparent">
             build
           </span>{" "}

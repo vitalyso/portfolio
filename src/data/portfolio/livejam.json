@@ -1,0 +1,24 @@
+{
+  "featured": true,
+  "title": "LiveJam",
+  "scope": [
+    "Frontend",
+    "Backend",
+    "Architect",
+    "DevOps"
+  ],
+  "skills": [
+    "React",
+    "Node.js",
+    "Redux",
+    "Electron",
+    "Postgres",
+    "Redis",
+    "Youtube API",
+    "Spotify API",
+    "Apple Music API"
+  ],
+  "details": ["2019-2020"],
+  "summary": "LiveJam is a music player based on YouTube API and their embedded player. Think it like Spotify with videos.",
+  "content": "LiveJam is a music player based on YouTube API and their embedded player. Think it like Spotify with videos."
+}
