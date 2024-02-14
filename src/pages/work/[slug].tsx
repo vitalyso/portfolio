@@ -35,6 +35,7 @@ export default function Work({ data }: InferGetServerSidePropsType<typeof getSta
     >
       <Head>
         <title>{title}</title>
+        <meta name="description" content={data.summary} />
         <style>
           {`
           html, body {
@@ -145,6 +146,7 @@ type Data = {
   url?: string
   title: string
   content: string
+  summary: string
   skills: string[]
   scope: string[]
   details: string[]

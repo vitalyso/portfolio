@@ -12,6 +12,7 @@ export function SocialMedia({ className }: { className?: string }) {
         className="hover:text-primary-500 transition-colors duration-300"
         href="https://github.com/vitalyso"
         target="_blank"
+        aria-label="GitHub"
       >
         <IconGitHub className="h-4 w-4" />
       </a>
@@ -19,6 +20,7 @@ export function SocialMedia({ className }: { className?: string }) {
         className="hover:text-primary-500 transition-colors duration-300"
         href="https://twitter.com/vitaly_so"
         target="_blank"
+        aria-label="Twitter"
       >
         <IconTwitter className="h-4 w-4" />
       </a>
@@ -26,6 +28,7 @@ export function SocialMedia({ className }: { className?: string }) {
         className="hover:text-primary-500 transition-colors duration-300"
         href="https://www.linkedin.com/in/vitalyso"
         target="_blank"
+        aria-label="LinkedIn"
       >
         <IconLinkedIn className="h-4 w-4" />
       </a>
