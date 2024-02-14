@@ -21,6 +21,10 @@ export default function Home() {
     >
       <Head>
         <title>👨🏻‍💻Vitaly Sivkov | Software developer</title>
+        <meta
+          name="description"
+          content="Helping you to build and scale your product"
+        />
       </Head>
       <Header />
       <AboutMe />
