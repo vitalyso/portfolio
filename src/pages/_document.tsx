@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Html, Head, Main, NextScript } from "next/document";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 
 export default function Document() {
@@ -10,7 +9,6 @@ export default function Document() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <body>
-        <SpeedInsights />
         <Analytics />
         <Main />
         <NextScript />

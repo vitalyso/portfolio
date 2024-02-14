@@ -55,8 +55,10 @@ export function ShowcaseItem({
             <Image
               className="object-cover object-right-top"
               src={bgImage}
+              width={512}
+              height={512}
+              quality={100}
               alt="Showcase Image"
-              fill
             />
           </div>
         </div>
