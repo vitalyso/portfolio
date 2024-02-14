@@ -2,6 +2,7 @@ import * as React from "react";
 import { m, MotionProps } from "framer-motion";
 import { useIsMobile } from "~/hooks/useMediaQuery";
 import { cn } from "~/lib/utils";
+import Image from "next/image";
 
 const desktopProps: MotionProps = {
   initial: "hidden",
@@ -40,11 +41,13 @@ export function Screenshots({
       key={String(isMobile)}
       className={cn("flex flex-col gap-5", className)}
     >
-      {images.map((src) => (
+      {images.map((src, index) => (
         <m.div {...props} key={src} className="relative w-full">
-          <img
-            className="object-contain rounded-xl"
+          <Image
             src={src}
+            priority={index < 2}
+            placeholder="blur"
+            className="object-contain rounded-xl"
             alt="Screenshot"
           />
         </m.div>

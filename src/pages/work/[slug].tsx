@@ -10,8 +10,9 @@ import { useIsMobile } from "~/hooks/useMediaQuery";
 import { requestPortfolio } from "~/lib/request-portfolio";
 import Head from "next/head";
 
-export default function Work({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Work({ data }: InferGetServerSidePropsType<typeof getStaticProps>) {
   const isMobile = useIsMobile();
+  const title = "Portfolio: " + data.title;
   const variants = isMobile
     ? {
         hidden: { opacity: 0, y: -20 },
@@ -33,7 +34,14 @@ export default function Work({ data }: InferGetServerSidePropsType<typeof getSer
       }}
     >
       <Head>
-        <title>Portfolio: {data.title}</title>
+        <title>{title}</title>
+        <style>
+          {`
+          html, body {
+            background: rgb(26, 31, 37);
+          }
+        `}
+        </style>
       </Head>
       <m.div
         initial="hidden"
@@ -143,7 +151,7 @@ type Data = {
   images: string[]
 }
 
-export const getServerSideProps = (async (ctx) => {
+export const getStaticProps = (async (ctx) => {
   try {
     const { slug } = ctx.params as { slug: string }
     const data: Data = await requestPortfolio(slug)
@@ -152,3 +160,9 @@ export const getServerSideProps = (async (ctx) => {
     return { notFound: true }
   }
 }) satisfies GetServerSideProps<{ data: Data }>
+
+export const getStaticPaths = async () => {
+  const data = [{ slug: 'amie' }, {slug:'carient'}, { slug: 'livejam' }]
+  const paths = data.map((item) => ({ params: { slug: item.slug } }))
+  return { paths, fallback: false }
+}

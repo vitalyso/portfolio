@@ -1,4 +1,5 @@
 import { m } from "framer-motion";
+import Image from "next/image";
 
 interface Props {
   avatar: string;
@@ -39,7 +40,13 @@ export function ClientFeedback({
       className="p-5 rounded-xl bg-white/10 select-none"
     >
       <div className="flex gap-2.5">
-        <img className="w-10 h-10 rounded-full" src={avatar} alt={name} />
+        <Image
+          className="w-10 h-10 rounded-full"
+          src={avatar}
+          alt={name}
+          width={40}
+          height={40}
+        />
         <div className="flex-col justify-start items-start inline-flex">
           <div className="text-white text-base font-semibold leading-tight">
             {name}

@@ -30,4 +30,5 @@ main {
 img {
   pointer-events: none;
   user-select: none;
+  transition: 0.3s;
 }
