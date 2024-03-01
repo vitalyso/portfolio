@@ -1,10 +1,13 @@
 import { Container } from "~/components/utils/Container";
+import { SocialMedia } from "~/components/contact-me/SocialMedia";
 
 export function Footer() {
   return (
     <footer>
-      <Container className="flex items-center justify-center pb-4 md:py-10 text-white/50">
-        © {new Date().getFullYear()} Vitaly Sivkov
+      <Container className="flex flex-col items-center justify-center pb-4 md:py-10 gap-4">
+        <SocialMedia />
+        <p className="text-white/50">© {new Date().getFullYear()} Vitaly Sivkov</p>
+
       </Container>
     </footer>
   );

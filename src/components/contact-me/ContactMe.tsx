@@ -16,7 +16,7 @@ export function ContactMe() {
         className="md:pr-4 flex flex-col gap-2.5 select-none"
       >
         <h2 className="text-white text-4xl font-bold font-title">
-          Let’s build something fantastic together
+          Let’s build something<br className="hidden md:inline"/>  fantastic together
         </h2>
         <p className="font-light text-white/90 text-lg">
           Hey there! 🙋🏻‍♂️ Exciting times ahead! I'm thrilled that you've dropped
@@ -30,11 +30,14 @@ export function ContactMe() {
           collaboration. I can't wait to dive in, code, and create magic! Ready
           when you are. Let's build something fantastic! 🌟
         </p>
-        <SocialMedia className="hidden md:flex" />
+        <div className="hidden md:flex flex-col gap-4 pt-2">
+          {/*<div className="border-b border-white/15 max-w-60"/>*/}
+          {/*<SocialMedia/>*/}
+        </div>
       </m.div>
       <m.div {...rightProps}>
-        <ContactForm />
-        <SocialMedia className="md:hidden w-full justify-center mt-[60px]" />
+        <ContactForm/>
+        {/*<SocialMedia className="md:hidden w-full justify-center mt-[60px]" />*/}
       </m.div>
     </section>
   );

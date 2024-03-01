@@ -86,7 +86,7 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="flex flex-col md:flex-row w-full items-center gap-5">
+      <div className="flex flex-col md:flex-row w-full items-center gap-5 pb-5">
         <Button
           size="lg"
           type="submit"
