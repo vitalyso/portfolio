@@ -21,6 +21,7 @@ export function ShowcaseItem({
 }: Props) {
   return (
     <m.div
+      className="w-full"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-200px 0px 0px", amount: "some" }}
@@ -44,7 +45,7 @@ export function ShowcaseItem({
         href={`/work/${slug}`}
         className={cn(
           "group flex flex-col md:h-[300px] w-full md:flex-row items-center justify-between rounded-xl overflow-hidden relative select-none hover:scale-105 transition transition-all duration-500",
-          className
+          className,
         )}
       >
         <div className="max-w-[400px] font-sm px-5 md:px-10 pt-7 pb-5 md:py-5 relative z-10 flex flex-col gap-4 font-light">
