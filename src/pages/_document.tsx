@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Html, Head, Main, NextScript } from "next/document";
-import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function Document() {
   return (
@@ -9,9 +9,14 @@ export default function Document() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <body>
-        <Analytics />
-        <Main />
-        <NextScript />
+      <SpeedInsights/>
+      <script
+        defer
+        src="/stats/script.js"
+        data-website-id="56322ae3-bb07-4025-b953-dc01b2bfdaa0"
+      ></script>
+      <Main/>
+      <NextScript/>
       </body>
     </Html>
   );
