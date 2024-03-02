@@ -43,10 +43,10 @@ export function AboutMe() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: ANIMATION_DURATION, delay: 0.2 }}
-          className="text-center text-white text-3xl mt-5 md:text-5xl font-black font-hero leading-tight"
+          className="text-center text-white text-3xl my-5 md:mb-0 md:text-5xl font-black font-hero leading-tight"
         >
           {/* From idea to launch to growth */}
-          Helping you to <br className="md:hidden" />
+          Helping to{" "}
           <span className="bg-gradient-to-b from-primary-300 to-primary-500 bg-clip-text text-transparent">
             build
           </span>{" "}
@@ -54,7 +54,6 @@ export function AboutMe() {
           <span className="bg-gradient-to-b from-primary-300 to-primary-500 bg-clip-text text-transparent">
             scale
           </span>{" "}
-          <br className="md:hidden" />
           your{" "}
           <span className="bg-gradient-to-b from-primary-300 to-primary-500 bg-clip-text text-transparent">
             product
