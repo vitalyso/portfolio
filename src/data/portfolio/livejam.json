@@ -1,5 +1,6 @@
 {
   "featured": true,
+  "order": 3,
   "title": "LiveJam",
   "scope": [
     "Frontend",

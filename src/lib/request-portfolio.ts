@@ -1,16 +1,17 @@
 import fs from "fs/promises";
 import path from "path";
 import sharp from "sharp";
+import { PortfolioItem } from "~/types";
 
 const dataFolder = path.join(process.cwd(), "src/data/portfolio");
 const imagesFolder = path.join(process.cwd(), "public/portfolio");
 
 const readImages = async (id: string) => {
   const imagesPath = path.join(imagesFolder, id);
-  const images = await fs.readdir(imagesPath);
+  const files = await fs.readdir(imagesPath);
 
-  const result = images
-    .filter((name) => /\d+\.(png|jpe?g|webp)/.test(name))
+  const result = files
+    .filter((name) => /.(png|jpe?g|webp|svg)$/.test(name))
     .map(async (name) => {
       const filePath = path.join(imagesPath, name);
       const metadata = await sharp(filePath).metadata();
@@ -26,7 +27,12 @@ const readImages = async (id: string) => {
       };
     });
 
-  return Promise.all(result);
+  const images = await Promise.all(result);
+  const screenshots = images.filter((img) => /\d+\.(.*)$/.test(img.src));
+  const logo = images.find((img) => /logo\.(.*)$/.test(img.src));
+  const cover = images.find((img) => img.src.includes("showcase-bg"));
+
+  return { screenshots, logo, cover };
 };
 
 const readData = async (id: string) => {
@@ -40,13 +46,19 @@ export async function requestPortfolio(projectId: string) {
   const data = await readData(projectId);
   const images = await readImages(projectId);
 
-  return { id: projectId, images, ...data };
+  return {
+    id: projectId,
+    images: images.screenshots,
+    logo: images.logo ?? null,
+    cover: images.cover ?? null,
+    ...data,
+  };
 }
-export async function requestPortfolioList() {
+export async function requestPortfolioList(): Promise<PortfolioItem[]> {
   const files = await fs.readdir(dataFolder);
   return await Promise.all(
     files.map(async (file) => {
-      const data = await readData(file.replace(/\.json$/, ""));
+      const data = await requestPortfolio(file.replace(/\.json$/, ""));
       return { id: file.replace(/\.json$/, ""), ...data };
     }),
   );

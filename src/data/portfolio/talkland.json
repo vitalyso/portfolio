@@ -1,5 +1,6 @@
 {
   "featured": false,
+  "order": 5,
   "title": "TalkLand",
   "scope": [
     "Frontend",

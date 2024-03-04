@@ -1,5 +1,6 @@
 {
   "featured": false,
+  "order": 6,
   "title": "Sparrow Reporting Tool",
   "scope": [
     "Frontend"
@@ -11,6 +12,6 @@
     "D3.js"
   ],
   "details": ["2019"],
-  "summary": "",
+  "summary": "A renderer for a PDF report",
   "content": "A renderer for a PDF report"
 }

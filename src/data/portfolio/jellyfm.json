@@ -1,5 +1,6 @@
 {
   "featured": false,
+  "order": 4,
   "title": "JellyFM",
   "scope": [
     "Frontend",

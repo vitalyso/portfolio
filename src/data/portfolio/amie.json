@@ -1,5 +1,6 @@
 {
   "featured": true,
+  "order": 1,
   "title": "Amie",
   "url": "https://amie.so",
   "scope": ["Frontend", "Backend", "Electron", "CI/CD", "DevOps", "Code Review"],

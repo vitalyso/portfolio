@@ -1,5 +1,6 @@
 {
   "featured": true,
+  "order": 2,
   "title": "Carient",
   "url": "https://carientskin.com",
   "scope": ["Frontend", "Backend", "Architect", "DevOps"],
