@@ -66,7 +66,7 @@ export function FeaturedWork() {
         />
         <p>
           LiveJam is a music player based on YouTube API and their embedded
-          player. Think it like Spotify with a video player. <br />
+          player. Think it like Spotify with videos. <br />
           <br />
         </p>
       </ShowcaseItem>

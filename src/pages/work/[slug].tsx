@@ -1,5 +1,5 @@
 import * as React from "react";
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
+import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import Link from "next/link";
 import { m } from "framer-motion";
 import { IconCornerArrow } from "~/components/icons/IconCornerArrow";
@@ -7,10 +7,15 @@ import { SocialMedia } from "~/components/contact-me/SocialMedia";
 import { Screenshots } from "~/components/work-details/Screenshots";
 import { AnimatedList } from "~/components/work-details/AnimatedList";
 import { useIsMobile } from "~/hooks/useMediaQuery";
-import { requestPortfolio } from "~/lib/request-portfolio";
+import {
+  requestPortfolio,
+  requestPortfolioList,
+} from "~/lib/request-portfolio";
 import Head from "next/head";
 
-export default function Work({ data }: InferGetServerSidePropsType<typeof getStaticProps>) {
+export default function Work({
+  data,
+}: InferGetServerSidePropsType<typeof getStaticProps>) {
   const isMobile = useIsMobile();
   const title = "Portfolio: " + data.title;
   const variants = isMobile
@@ -85,12 +90,14 @@ export default function Work({ data }: InferGetServerSidePropsType<typeof getSta
               items={data.scope}
               baseDelay={0.2}
             />
-            {data.details && <AnimatedList
-              className="border-t border-primary-700"
-              title="Timeframe"
-              items={data.details}
-              baseDelay={0.4}
-            />}
+            {data.details && (
+              <AnimatedList
+                className="border-t border-primary-700"
+                title="Timeframe"
+                items={data.details}
+                baseDelay={0.4}
+              />
+            )}
           </div>
 
           {data.url && (
@@ -141,30 +148,30 @@ export default function Work({ data }: InferGetServerSidePropsType<typeof getSta
   );
 }
 
-
 type Data = {
-  url?: string
-  title: string
-  content: string
-  summary: string
-  skills: string[]
-  scope: string[]
-  details: string[]
-  images: string[]
-}
+  url?: string;
+  title: string;
+  content: string;
+  summary: string;
+  skills: string[];
+  scope: string[];
+  details: string[];
+  images: string[];
+};
 
 export const getStaticProps = (async (ctx) => {
   try {
-    const { slug } = ctx.params as { slug: string }
-    const data: Data = await requestPortfolio(slug)
-    return { props: { data } }
+    const { slug } = ctx.params as { slug: string };
+    const data: Data = await requestPortfolio(slug);
+    return { props: { data } };
   } catch (e) {
-    return { notFound: true }
+    console.log(e);
+    return { notFound: true };
   }
-}) satisfies GetServerSideProps<{ data: Data }>
+}) satisfies GetServerSideProps<{ data: Data }>;
 
 export const getStaticPaths = async () => {
-  const data = [{ slug: 'amie' }, {slug:'carient'}, { slug: 'livejam' }]
-  const paths = data.map((item) => ({ params: { slug: item.slug } }))
-  return { paths, fallback: false }
-}
+  const data = await requestPortfolioList();
+  const paths = data.map((item) => ({ params: { slug: item.id } }));
+  return { paths, fallback: false };
+};

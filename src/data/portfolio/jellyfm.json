@@ -1,0 +1,21 @@
+{
+  "featured": false,
+  "title": "JellyFM",
+  "scope": [
+    "Frontend",
+    "Backend",
+    "Architect",
+    "DevOps"
+  ],
+  "skills": [
+    "React",
+    "Node.js",
+    "GraphQL",
+    "Redux",
+    "Postgres",
+    "Redis"
+  ],
+  "details": ["2019"],
+  "summary": "JellyFM is an online tool for picking movies to watch, where you can see trailers, ratings, cast and more. Based on TheMovieDB API.",
+  "content": "JellyFM is an online tool for picking movies to watch, where you can see trailers, ratings, cast and more. Based on TheMovieDB API"
+}

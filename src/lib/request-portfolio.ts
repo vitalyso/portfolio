@@ -42,3 +42,12 @@ export async function requestPortfolio(projectId: string) {
 
   return { id: projectId, images, ...data };
 }
+export async function requestPortfolioList() {
+  const files = await fs.readdir(dataFolder);
+  return await Promise.all(
+    files.map(async (file) => {
+      const data = await readData(file.replace(/\.json$/, ""));
+      return { id: file.replace(/\.json$/, ""), ...data };
+    }),
+  );
+}
