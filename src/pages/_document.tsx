@@ -9,14 +9,14 @@ export default function Document() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <body>
-      <SpeedInsights/>
-      <script
-        defer
-        src="/stats/script.js"
-        data-website-id="56322ae3-bb07-4025-b953-dc01b2bfdaa0"
-      ></script>
-      <Main/>
-      <NextScript/>
+        {process.env.NODE_ENV === "production" && <SpeedInsights />}
+        <script
+          defer
+          src="/stats/script.js"
+          data-website-id="56322ae3-bb07-4025-b953-dc01b2bfdaa0"
+        ></script>
+        <Main />
+        <NextScript />
       </body>
     </Html>
   );
