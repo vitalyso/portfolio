@@ -1,0 +1,21 @@
+{
+  "featured": false,
+  "title": "TalkLand",
+  "scope": [
+    "Frontend",
+    "Backend",
+    "Architect",
+    "DevOps"
+  ],
+  "skills": [
+    "TypeScript",
+    "Canvas",
+    "Node.js",
+    "Socket.io",
+    "WebRTC",
+    "Pixi.js"
+  ],
+  "details": ["2020"],
+  "summary": "TalkLand is an application for audio calls, where you can move around a 2D world and talk to people in real time. The closer you are to someone, the louder you hear them.",
+  "content": "TalkLand is an application for audio calls, where you can move around a 2D world and talk to people in real time. The closer you are to someone, the louder you hear them."
+}
