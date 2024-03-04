@@ -7,12 +7,7 @@ const ANIMATION_DURATION = 0.75;
 
 export function AboutMe() {
   return (
-    <section
-      id="about"
-      className="relative md:overflow-y-hidden py-10 px-5 md:pt-60 md:pb-0"
-    >
-      <RadialGradientBg />
-
+    <section id="about" className="py-10 px-5 md:pt-60 md:pb-0">
       <div className="mx-auto max-w-[620px] pb-5 flex flex-col items-center relative">
         <m.div
           initial={{ y: 20, opacity: 0 }}
@@ -47,15 +42,15 @@ export function AboutMe() {
         >
           {/* From idea to launch to growth */}
           Helping to{" "}
-          <span className="bg-gradient-to-b from-primary-300 to-primary-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-t from-primary-300 to-primary-600 bg-clip-text text-transparent">
             build
           </span>{" "}
           and{" "}
-          <span className="bg-gradient-to-b from-primary-300 to-primary-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-b from-primary-300 to-primary-600 bg-clip-text text-transparent">
             scale
           </span>{" "}
           your{" "}
-          <span className="bg-gradient-to-b from-primary-300 to-primary-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-b from-primary-300 to-primary-600 bg-clip-text text-transparent">
             product
           </span>
         </m.h1>

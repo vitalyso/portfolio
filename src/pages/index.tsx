@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import { m } from "framer-motion";
 import { Header } from "~/components/Header";
@@ -6,6 +7,17 @@ import { FeaturedWork } from "~/components/featured-work/FeaturedWork";
 import { HappyClients } from "~/components/happy-clients/HappyClients";
 import { ContactMe } from "~/components/contact-me/ContactMe";
 import { Footer } from "~/components/Footer";
+import { RadialGradientBg } from "~/components/about-me/RadialGradientBg";
+
+const LogosAnimation = dynamic(
+  async () => {
+    let mod = await import("~/components/LogosAnimation");
+    return mod.LogosAnimation;
+  },
+  {
+    ssr: false,
+  },
+);
 import { MetaTags } from "~/components/MetaTags";
 
 export default function Home() {
@@ -30,6 +42,8 @@ export default function Home() {
       <HappyClients />
       <ContactMe />
       <Footer />
+      <RadialGradientBg />
+      <LogosAnimation />
     </m.div>
   );
 }
