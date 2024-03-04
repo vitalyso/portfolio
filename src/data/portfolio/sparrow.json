@@ -1,0 +1,16 @@
+{
+  "featured": false,
+  "title": "Sparrow Reporting Tool",
+  "scope": [
+    "Frontend"
+  ],
+  "skills": [
+    "React",
+    "Node.js",
+    "Styled Components",
+    "D3.js"
+  ],
+  "details": ["2019"],
+  "summary": "",
+  "content": "A renderer for a PDF report"
+}
