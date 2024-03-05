@@ -62,10 +62,10 @@ export function AboutMe() {
         >
           A freelance software developer with 12+ years in crafting high quality
           modern apps. Specializing in frontend for the last 8 years, I
-          seamlessly blend it with backend expertise. Committed to constant
-          growth, I'm always exploring the latest in tech to ensure your
-          project's success. Excited to hear about your project – let's make
-          things happen together! 🚀
+          seamlessly blend it with backend expertise (React & Node). Committed
+          to constant growth, I'm always exploring the latest in tech to ensure
+          your project's success. Excited to hear about your project – let's
+          make things happen together! 🚀
         </m.p>
 
         <m.div
