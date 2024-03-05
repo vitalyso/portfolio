@@ -13,9 +13,9 @@ function sortByOrder(a: PortfolioItem, b: PortfolioItem) {
 
 export function WorkList({ items }: Props) {
   return (
-    <Container className="pt-40">
-      <h1 className="text-4xl font-bold mb-4">Works</h1>
-      <div className="grid gap-6 grid-cols-3">
+    <Container className="pt-10 md:pt-40">
+      <h1 className="text-4xl font-bold font-title mb-4">Works</h1>
+      <div className="grid gap-6 md:grid-cols-3">
         {items.sort(sortByOrder).map((item) => (
           <WorkListItem key={item.id} data={item} />
         ))}
