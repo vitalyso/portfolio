@@ -60,9 +60,9 @@ export default function Work({
           <div className="flex items-center justify-between">
             <Link
               className="text-primary-500 relative hover:underline"
-              href="/work"
+              href="/"
             >
-              ← Works
+              ← Back
             </Link>
           </div>
 
