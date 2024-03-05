@@ -37,7 +37,7 @@ export function ClientFeedback({
           scale: 1.1,
         },
       }}
-      className="p-5 rounded-xl bg-white/10 select-none"
+      className="p-5 rounded-xl bg-background-light/90 select-none"
     >
       <div className="flex gap-2.5">
         <Image

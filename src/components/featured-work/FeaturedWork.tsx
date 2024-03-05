@@ -9,7 +9,7 @@ export function FeaturedWork() {
     <Container
       id="work"
       as="section"
-      className="flex flex-col items-center gap-5 py-10 md:pt-60 md:pb-0"
+      className="flex flex-col items-center gap-5 py-10 md:pt-60 md:pb-0 md:mt-10"
     >
       <h2 ref={ref} className="text-white text-4xl font-bold font-title">
         Featured Work

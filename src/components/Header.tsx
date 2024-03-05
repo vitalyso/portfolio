@@ -24,7 +24,7 @@ export function Header({
   initial = "about",
   spy = true,
 }: {
-  initial: string;
+  initial?: string;
   spy?: boolean;
 }) {
   const [active, setActive] = React.useState(initial);

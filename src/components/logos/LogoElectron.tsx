@@ -5,7 +5,7 @@ interface Props {
 }
 
 const SvgComponent = (props: Props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-38.4 -64 332.8 384">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
     <g fillRule="evenodd" fill="none">
       <circle r="128" cy="128" cx="128" fill="#2B2E3A" />
       <g fillRule="nonzero" fill="#9FEAF9">

@@ -20,6 +20,7 @@ const config: Config = {
       },
       colors: {
         background: "#1a1f25",
+        "background-light": "#31363c",
         primary: {
           50: "#FFEEEB",
           100: "#FFDDD6",

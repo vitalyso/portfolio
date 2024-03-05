@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { m } from "framer-motion";
 import { NavButton } from "~/components/NavButton";
-import { RadialGradientBg } from "./RadialGradientBg";
 
 const ANIMATION_DURATION = 0.75;
 

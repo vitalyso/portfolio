@@ -16,13 +16,14 @@ export function ContactMe() {
         className="md:pr-4 flex flex-col gap-2.5 select-none"
       >
         <h2 className="text-white text-4xl font-bold font-title">
-          Let’s build something<br className="hidden md:inline"/>  fantastic together
+          Let’s build something
+          <br className="hidden md:inline" /> fantastic together
         </h2>
         <p className="font-light text-white/90 text-lg">
-          Hey there! 🙋🏻‍♂️ Exciting times ahead! I'm thrilled that you've dropped
-          by. Whether you've got a groundbreaking idea or just a spark of
-          inspiration, I'm here to turn it into something extraordinary. Let's
-          kick off this digital adventure together!
+          Hey there! 🙋🏻‍♂️ I'm thrilled that you've dropped by. Whether you've got
+          a groundbreaking idea or just a spark of inspiration, I'm here to turn
+          it into something extraordinary. Let's kick off this digital adventure
+          together!
           <br />
           <br />
           Share a few details, like your name, email, and spill the beans on
@@ -36,7 +37,7 @@ export function ContactMe() {
         </div>
       </m.div>
       <m.div {...rightProps}>
-        <ContactForm/>
+        <ContactForm />
         {/*<SocialMedia className="md:hidden w-full justify-center mt-[60px]" />*/}
       </m.div>
     </section>
