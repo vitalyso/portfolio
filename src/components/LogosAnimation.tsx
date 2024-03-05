@@ -29,16 +29,13 @@ export function LogosAnimation() {
           return (
             <m.div
               className="absolute"
-              initial={{ opacity: 0, scale: 0 }}
+              initial={{ opacity: 0.5, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               // transition={{ duration: 1, delay: 0.8 }}
               transition={{
-                delay: 0.8 + (1.1 - i * 0.1),
-                duration: 1,
-                // type: "spring",
-                // damping: 7,
-                // mass: 0.3,
-                // stiffness: 50,
+                repeat: Infinity,
+                repeatType: "reverse",
+                duration: 2 + 2 * Math.random(),
               }}
               key={point.y}
               style={{
