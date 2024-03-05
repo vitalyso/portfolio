@@ -1,8 +1,8 @@
 import * as React from "react";
 
-export function useNavClick(name: string) {
+export function useNavClick(name: string, spy = true) {
   const [anchorTarget, setAnchorTarget] = React.useState<HTMLElement | null>(
-    null
+    null,
   );
 
   React.useEffect(() => {
@@ -10,7 +10,10 @@ export function useNavClick(name: string) {
   }, [name]);
 
   return (event: React.MouseEvent) => {
-    event.preventDefault();
+    if (spy) {
+      event.preventDefault();
+    }
+
     anchorTarget?.scrollIntoView({
       behavior: "smooth",
       block: "start",

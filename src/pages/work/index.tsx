@@ -27,10 +27,9 @@ export default function WorkPage(
         <title>👨🏻‍💻Vitaly Sivkov | Full-stack developer</title>
         <MetaTags />
       </Head>
-      <Header />
 
+      <Header initial="work" spy={false} />
       <WorkList items={props.data} />
-
       <ContactMe />
       <Footer />
     </m.div>
