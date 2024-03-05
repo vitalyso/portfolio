@@ -49,7 +49,7 @@ export default function Home() {
           property="og:description"
           content="Helping to build and scale your product"
         />
-        <meta property="og:image" content="https://vitaly.so/og.png" />
+        <meta property="og:image" content="https://vitaly.so/meta.jpg" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@vitaly_so" />
@@ -61,7 +61,7 @@ export default function Home() {
           name="twitter:description"
           content="Helping to build and scale your product"
         />
-        <meta name="twitter:image" content="https://vitaly.so/og.png" />
+        <meta name="twitter:image" content="https://vitaly.so/meta.jpg" />
         <meta name="twitter:url" content="https://vitaly.so" />
       </Head>
       <Header />
