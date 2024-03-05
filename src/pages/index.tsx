@@ -52,8 +52,7 @@ export default function Home() {
         <meta property="og:image" content="https://vitaly.so/og.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:domain" content="vitaly.so" />
-        <meta name="twitter:url" content="https://vitaly.so" />
+        <meta name="twitter:site" content="@vitaly_so" />
         <meta
           name="twitter:title"
           content="👨🏻‍💻Vitaly Sivkov | Full-stack developer"
@@ -63,6 +62,7 @@ export default function Home() {
           content="Helping to build and scale your product"
         />
         <meta name="twitter:image" content="https://vitaly.so/og.png" />
+        <meta name="twitter:url" content="https://vitaly.so" />
       </Head>
       <Header />
       <AboutMe />
