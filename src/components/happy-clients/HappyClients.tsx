@@ -19,7 +19,7 @@ const clients = [
       "\n" +
       "He's quick to learn anything and will do a great job with whatever you have him work on. He did/does some of the most fundamental work in our product. And he'll leave everything he touches in a better spot (with written tests etc).\n" +
       "\n" +
-      "On top of that he's an awesome person and a nice addition to any team. You'll enjoy every minute you spend with Vitaly.\"",
+      "On top of that he's an awesome person and a nice addition to any team. You'll enjoy every minute you spend with Vitaly.",
   },
   {
     avatar: "/clients/ash.webp",
