@@ -26,7 +26,7 @@ const clients = [
   {
     avatar: "/clients/ash.webp",
     name: "Ash Sheikh",
-    company: "NextHQ, Designer",
+    company: "NextHQ",
     feedback:
       "Vitaly is very skilled and reliable. He's able to understand the goals of the business, ask right questions and work with existing codebases. His frontend skills are great which is rare for someone who's also good with backend. I really appreciate working with him.",
   },
