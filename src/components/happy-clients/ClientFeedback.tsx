@@ -56,7 +56,7 @@ export function ClientFeedback({
           </div>
         </div>
       </div>
-      <div className="mt-3 font-light">“{feedback}”</div>
+      <div className="mt-3 font-light whitespace-pre-line">“{feedback}”</div>
     </m.div>
   );
 }
