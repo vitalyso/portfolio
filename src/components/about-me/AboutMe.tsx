@@ -60,8 +60,8 @@ export function AboutMe() {
           transition={{ duration: ANIMATION_DURATION, delay: 0.3 }}
           className="md:my-5 text-center text-white/90 font-light text-lg"
         >
-          A freelance software developer with 12+ years in crafting high quality
-          modern apps. Specializing in frontend for the last 8 years, I
+          An independent software developer with 12+ years in crafting high
+          quality modern apps. Specializing in frontend for the last 8 years, I
           seamlessly blend it with backend expertise (React & Node). Committed
           to constant growth, I'm always exploring the latest in tech to ensure
           your project's success. Excited to hear about your project – let's
