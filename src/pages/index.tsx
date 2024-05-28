@@ -33,7 +33,7 @@ export default function Home() {
       }}
     >
       <Head>
-        <title>vitaly | i build high-quality web apps</title>
+        <title>vitaly | software developer</title>
         <MetaTags />
       </Head>
       <Header />
