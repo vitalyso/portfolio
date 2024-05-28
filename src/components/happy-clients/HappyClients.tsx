@@ -59,7 +59,7 @@ export function HappyClients() {
     <Container
       id="feedback"
       as="section"
-      className="py-10 md:pt-40 md:pb-0 flex flex-col items-center gap-5 overflow-hidden"
+      className="py-10 md:pt-40 md:pb-10 flex flex-col items-center gap-5 overflow-hidden"
     >
       <h2 className="text-white text-4xl font-bold font-title">
         Happy Clients

@@ -5,12 +5,12 @@ import { Container } from "~/components/utils/Container";
 import { navigateTo, useNavClick } from "~/hooks/useNavClick";
 import { NavButton } from "~/components/NavButton";
 import Link from "next/link";
+import { SocialMedia } from "~/components/contact-me/SocialMedia";
 
 const navigation = [
-  { label: "About", name: "about" },
-  { label: "Works", name: "work" },
-  { label: "Feedback", name: "feedback" },
-  { label: "Contact", name: "contact" },
+  { label: "about", name: "about" },
+  { label: "works", name: "work" },
+  { label: "feedback", name: "feedback" },
 ];
 
 const menuItems: Record<string, any> = {
@@ -121,10 +121,8 @@ export function Header({
             </NavLink>
           ))}
         </div>
-        <div className="flex flex-1 items-center justify-end gap-x-6">
-          <NavButton anchor="contact" size="lg">
-            Hire me
-          </NavButton>
+        <div className="flex flex-1 items-center justify-end h-10 gap-x-6">
+          <SocialMedia />
         </div>
       </Container>
     </header>

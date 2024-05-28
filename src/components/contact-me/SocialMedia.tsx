@@ -7,7 +7,7 @@ import { MailLink } from "./MailLink";
 
 export function SocialMedia({ className }: { className?: string }) {
   return (
-    <div className={cn("flex gap-4 mt-2", className)}>
+    <div className={cn("flex gap-4", className)}>
       <a
         className="hover:text-primary-500 transition-colors duration-300"
         href="https://github.com/vitalyso"
@@ -23,14 +23,6 @@ export function SocialMedia({ className }: { className?: string }) {
         aria-label="Twitter"
       >
         <IconTwitter className="h-4 w-4" />
-      </a>
-      <a
-        className="hover:text-primary-500 transition-colors duration-300"
-        href="https://www.linkedin.com/in/vitalyso"
-        target="_blank"
-        aria-label="LinkedIn"
-      >
-        <IconLinkedIn className="h-4 w-4" />
       </a>
       <MailLink />
     </div>

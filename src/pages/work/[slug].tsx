@@ -127,14 +127,8 @@ export default function Work({
             }}
             className="mt-32 flex flex-col items-center md:items-start"
           >
-            <h1 className="font-title font-black text-2xl leading-normal">
-              Got an idea?{" "}
-              <Link
-                className="text-primary-500 hover:underline"
-                href={`/#contact`}
-              >
-                Let's talk.
-              </Link>
+            <h1 className="font-title font-black text-2xl leading-normal mb-2">
+              Got an idea? Let's talk.
             </h1>
             <SocialMedia />
           </m.div>

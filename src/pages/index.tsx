@@ -40,8 +40,8 @@ export default function Home() {
       <AboutMe />
       <FeaturedWork />
       <HappyClients />
-      <ContactMe />
-      <Footer />
+      {/*<ContactMe />*/}
+      {/*<Footer />*/}
       <RadialGradientBg />
       <LogosAnimation />
     </m.div>
