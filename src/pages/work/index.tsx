@@ -24,7 +24,7 @@ export default function WorkPage(
       }}
     >
       <Head>
-        <title>👨🏻‍💻Vitaly Sivkov | Full-stack developer</title>
+        <title>vitaly | i build high-quality web apps</title>
         <MetaTags />
       </Head>
 

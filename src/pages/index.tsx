@@ -33,7 +33,7 @@ export default function Home() {
       }}
     >
       <Head>
-        <title>👨🏻‍💻Vitaly Sivkov | Full-stack Developer</title>
+        <title>vitaly | i build high-quality web apps</title>
         <MetaTags />
       </Head>
       <Header />
