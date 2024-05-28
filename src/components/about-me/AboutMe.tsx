@@ -6,7 +6,7 @@ const ANIMATION_DURATION = 0.75;
 
 export function AboutMe() {
   return (
-    <section id="about" className="py-10 px-5 md:pt-80 md:pb-0">
+    <section id="about" className="py-10 px-5 md:pt-[400px] md:pb-0">
       <div className="mx-auto max-w-[620px] pb-5 flex flex-col items-center relative">
         <m.div
           initial={{ y: 20, opacity: 0 }}
