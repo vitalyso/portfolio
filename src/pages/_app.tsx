@@ -4,6 +4,8 @@ import { Cormorant_Garamond, Montserrat, Mukta_Mahee } from "next/font/google";
 import { Motion } from "~/components/utils/Motion";
 import { cn } from "~/lib/utils";
 import { AnimatePresence } from "framer-motion";
+import { OpenPanelComponent } from "@openpanel/nextjs";
+import * as React from "react";
 
 const heroFont = Montserrat({
   weight: ["400", "600", "900"],
@@ -27,23 +29,31 @@ const titleFont = Cormorant_Garamond({
 });
 
 export default function App({ Component, pageProps, router }: AppProps) {
+  console.log(OpenPanelComponent);
   return (
-    <Motion>
-      <main
-        className={cn(
-          "flex flex-col min-h-screen",
-          heroFont.variable,
-          bodyFont.variable,
-          titleFont.variable
-        )}
-      >
-        <AnimatePresence
-          mode="wait"
-          onExitComplete={() => window.scrollTo(0, 0)}
+    <>
+      <OpenPanelComponent
+        clientId="0984658d-9408-4a44-a78b-2c5825e4d0c9"
+        trackScreenViews={true}
+        trackOutgoingLinks={true}
+      />
+      <Motion>
+        <main
+          className={cn(
+            "flex flex-col min-h-screen",
+            heroFont.variable,
+            bodyFont.variable,
+            titleFont.variable,
+          )}
         >
-          <Component key={router.route} {...pageProps} />
-        </AnimatePresence>
-      </main>
-    </Motion>
+          <AnimatePresence
+            mode="wait"
+            onExitComplete={() => window.scrollTo(0, 0)}
+          >
+            <Component key={router.route} {...pageProps} />
+          </AnimatePresence>
+        </main>
+      </Motion>
+    </>
   );
 }
