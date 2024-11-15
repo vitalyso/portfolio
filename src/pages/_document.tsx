@@ -11,13 +11,12 @@ export default function Document() {
       </Head>
       <body>
         {process.env.NODE_ENV === "production" && <SpeedInsights />}
-        {process.env.NODE_ENV === "production" && (
-          <OpenPanelComponent
-            clientId="0984658d-9408-4a44-a78b-2c5825e4d0c9"
-            trackScreenViews={true}
-            trackOutgoingLinks={true}
-          />
-        )}
+
+        <OpenPanelComponent
+          clientId="0984658d-9408-4a44-a78b-2c5825e4d0c9"
+          trackScreenViews={true}
+          trackOutgoingLinks={true}
+        />
         <Main />
         <NextScript />
       </body>
