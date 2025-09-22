@@ -17,10 +17,7 @@ export function AnimatedList({
 }) {
   return (
     <ul
-      className={cn(
-        "grid w-full grid-cols-2 md:block md:w-40 px-5 py-4",
-        className
-      )}
+      className={cn("grid w-full grid-cols-2 md:block md:w-40 py-4", className)}
     >
       <AnimatedListItem
         className="font-bold text-xl mb-1 font-title -ml-1"
