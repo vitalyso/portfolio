@@ -33,15 +33,15 @@ export default function Home() {
       }}
     >
       <Head>
-        <title>vitaly | software developer</title>
+        <title>vitaly | product engineer</title>
         <MetaTags />
       </Head>
       <Header />
       <AboutMe />
       <FeaturedWork />
       <HappyClients />
-      {/*<ContactMe />*/}
-      {/*<Footer />*/}
+      <ContactMe />
+      <Footer />
       <RadialGradientBg />
       <LogosAnimation />
     </m.div>

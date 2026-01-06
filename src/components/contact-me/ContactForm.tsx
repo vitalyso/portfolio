@@ -11,7 +11,7 @@ export function ContactForm() {
   const [error, setError] = React.useState<string | null>(null);
 
   const handleSubmit = async function handleSubmit(
-    event: React.FormEvent<HTMLFormElement>
+    event: React.FormEvent<HTMLFormElement>,
   ) {
     event.preventDefault();
     setPending(true);
@@ -108,11 +108,9 @@ function FormSent() {
       <h2 className="text-white text-4xl font-bold font-title mb-2.5 flex items-center">
         <span>Message Sent</span> <span className="text-3xl pt-2 ml-2">✉️</span>
       </h2>
-      <p className="font-light text-white/80">
-        Thanks a bunch for reaching out! 🙌 <br /> Your message is on its way to
-        my digital doorstep. I'm excited to dive into it and will get back to
-        you pronto. In the meantime, feel free to relax – you've just taken the
-        first step toward something fantastic! Cheers ✨.
+      <p className="font-light text-neutral-200">
+        Thanks for reaching out. I've got your message and will respond within
+        24 hours. Looking forward to learning more about your project.
       </p>
     </div>
   );

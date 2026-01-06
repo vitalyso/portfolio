@@ -26,7 +26,7 @@ export function FeaturedWork() {
           height="27"
           alt="Amie"
         />
-        <p>
+        <p className="leading-[1.25]">
           Amie is a joyful productivity application that combines calendar,
           todos and many more. Words can't convey it, you need to see this
           beauty with your own eyes.

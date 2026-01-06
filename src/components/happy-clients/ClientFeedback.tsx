@@ -66,7 +66,9 @@ export function ClientFeedback({
           <IconStar />
         </div>
       </div>
-      <div className="mt-3 font-light whitespace-pre-line">“{feedback}”</div>
+      <div className="mt-3 font-light whitespace-pre-line text-neutral-200 leading-[1.25]">
+        “{feedback}”
+      </div>
     </m.div>
   );
 }

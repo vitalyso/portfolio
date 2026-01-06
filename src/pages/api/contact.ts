@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   const data = JSON.parse(req.body);
 
@@ -15,7 +15,7 @@ export default async function handler(
 
   const slackUrl = process.env.SLACK_WEBHOOK;
   const payload = {
-    text: `New message from ${data.name} <${data.email}>: \n${data.message}`,
+    text: `New message from ${data.name} <${data.email}>: \n${data.message} \n\ncc: @vitaly`,
   };
 
   try {

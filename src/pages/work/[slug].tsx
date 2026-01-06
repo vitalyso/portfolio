@@ -75,7 +75,9 @@ export default function Work({
             images={data.images}
           />
 
-          <p className="font-light whitespace-pre-line">{data.content}</p>
+          <p className="font-light whitespace-pre-line text-neutral-400">
+            {data.content}
+          </p>
 
           <div className="flex flex-col md:flex-row pt-5 font-light">
             <AnimatedList

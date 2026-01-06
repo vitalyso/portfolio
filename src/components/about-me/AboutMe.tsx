@@ -6,8 +6,24 @@ const ANIMATION_DURATION = 0.75;
 
 export function AboutMe() {
   return (
-    <section id="about" className="py-10 px-5 md:pt-[400px] md:pb-0">
-      <div className="mx-auto max-w-[620px] pb-5 flex flex-col items-center relative">
+    <section id="about" className="py-10 px-5 md:pt-[280px] md:pb-0">
+      <div className="mx-auto max-w-[550px] pb-5 flex flex-col items-center relative">
+        <m.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: ANIMATION_DURATION,
+          }}
+        >
+          <Image
+            className="w-32 h-32 rounded-full"
+            src="/me.webp"
+            alt="Vitaly"
+            width="128"
+            height="128"
+          />
+        </m.div>
+
         <m.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -23,23 +39,21 @@ export function AboutMe() {
           transition={{ duration: ANIMATION_DURATION, delay: 0.2 }}
           className="text-center text-white text-3xl my-5 md:mb-0 md:text-5xl font-black font-hero leading-tight"
         >
-          {/* From idea to launch to growth */}i build{" "}
           <span className="bg-gradient-to-b from-primary-300 to-primary-600 bg-clip-text text-transparent">
-            high-quality
+            product
           </span>{" "}
-          web apps
+          engineer
         </m.h1>
 
         <m.p
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: ANIMATION_DURATION, delay: 0.3 }}
-          className="md:my-5 text-center text-white/90 font-light text-lg"
+          className="md:my-5 text-center text-neutral-200 leading-[1.25] font-light text-lg"
         >
-          software developer with over 12 years of experience crafting
-          high-quality, modern apps. for the past 8 years i specialized in
-          react.js and node.js, but am always exploring other areas to enrich my
-          skill set.
+          Senior full-stack developer (React & Node.js) focused on product
+          engineering. I solve technical problems and balance shipping fast with
+          building right. 10+ years building maintainable products.
         </m.p>
 
         <m.div

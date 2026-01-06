@@ -16,29 +16,30 @@ export function ContactMe() {
         className="md:pr-4 flex flex-col gap-2.5 select-none"
       >
         <h2 className="text-white text-4xl font-bold font-title">
-          Let’s build something
-          <br className="hidden md:inline" /> fantastic together
+          Let's work together
         </h2>
-        <p className="font-light text-white/90 text-lg">
-          Hey there! 🙋🏻‍♂️ I'm thrilled that you've dropped by. Whether you've got
-          a groundbreaking idea or just a spark of inspiration, I'm here to turn
-          it into something extraordinary. Let's kick off this digital adventure
-          together!
+        <p className="font-light text-neutral-200 leading-[1.25] text-lg">
+          Senior full-stack developer (React & Node.js) with 10+ years
+          experience. I write maintainable code and understand the tradeoffs
+          between shipping fast and building right.
           <br />
           <br />
-          Share a few details, like your name, email, and spill the beans on
-          your project dreams. The more you tell me, the better I can tailor our
-          collaboration. I can't wait to dive in, code, and create magic! Ready
-          when you are. Let's build something fantastic! 🌟
+          Looking for help with a new feature, refactoring a messy codebase, or
+          building something from scratch? I work independently and think beyond
+          the implementation.
+          <br />
+          <br />
+          Reach out with your project details and timeline - I typically respond
+          within 24 hours.
         </p>
         <div className="hidden md:flex flex-col gap-4 pt-2">
-          {/*<div className="border-b border-white/15 max-w-60"/>*/}
-          {/*<SocialMedia/>*/}
+          <div className="border-b border-white/15 max-w-60" />
+          <SocialMedia />
         </div>
       </m.div>
       <m.div {...rightProps}>
         <ContactForm />
-        {/*<SocialMedia className="md:hidden w-full justify-center mt-[60px]" />*/}
+        <SocialMedia className="md:hidden w-full justify-center mt-[60px]" />
       </m.div>
     </section>
   );

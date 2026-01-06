@@ -24,6 +24,14 @@ export function SocialMedia({ className }: { className?: string }) {
       >
         <IconTwitter className="h-4 w-4" />
       </a>
+      <a
+        className="hover:text-primary-500 transition-colors duration-300"
+        href="https://www.linkedin.com/in/vitalyso"
+        target="_blank"
+        aria-label="LinkedIn"
+      >
+        <IconLinkedIn className="h-4 w-4" />
+      </a>
       <MailLink />
     </div>
   );

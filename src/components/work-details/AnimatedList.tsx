@@ -17,10 +17,13 @@ export function AnimatedList({
 }) {
   return (
     <ul
-      className={cn("grid w-full grid-cols-2 md:block md:w-40 py-4", className)}
+      className={cn(
+        "grid w-full grid-cols-2 md:block md:w-40 px-0 py-4",
+        className,
+      )}
     >
       <AnimatedListItem
-        className="font-bold text-xl mb-1 font-title -ml-1"
+        className="font-black text-xl mb-1 font-title"
         delay={LIST_ANIMATION_DELAY + baseDelay + (items.length + 1) * 0.1}
       >
         {title}
@@ -29,6 +32,7 @@ export function AnimatedList({
       {items.map((item, index) => (
         <AnimatedListItem
           key={item}
+          className="text-neutral-400"
           delay={
             LIST_ANIMATION_DELAY + baseDelay + (items.length - index) * 0.1
           }
