@@ -49,7 +49,7 @@ export function AboutMe() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: ANIMATION_DURATION, delay: 0.3 }}
-          className="md:my-5 text-center text-neutral-200 leading-[1.25] font-light text-lg"
+          className="md:my-5 text-center text-neutral-200 leading-[1.25] font-light text-xl"
         >
           Senior full-stack developer (React & Node.js) focused on product
           engineering. I solve technical problems and balance shipping fast with
