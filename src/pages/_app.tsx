@@ -6,6 +6,9 @@ import { cn } from "~/lib/utils";
 import { AnimatePresence } from "framer-motion";
 import { OpenPanelComponent } from "@openpanel/nextjs";
 import * as React from "react";
+import { useEffect } from "react";
+import { PostHogProvider } from "posthog-js/react";
+import posthog from "posthog-js";
 
 const heroFont = Montserrat({
   weight: ["400", "600", "900"],
@@ -29,7 +32,16 @@ const titleFont = Cormorant_Garamond({
 });
 
 export default function App({ Component, pageProps, router }: AppProps) {
-  console.log(OpenPanelComponent);
+  useEffect(() => {
+    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY as string, {
+      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+      defaults: "2025-11-30",
+      loaded: (posthog) => {
+        if (process.env.NODE_ENV === "development") posthog.debug();
+      },
+    });
+  }, []);
+
   return (
     <>
       <OpenPanelComponent
@@ -37,23 +49,25 @@ export default function App({ Component, pageProps, router }: AppProps) {
         trackScreenViews={true}
         trackOutgoingLinks={true}
       />
-      <Motion>
-        <main
-          className={cn(
-            "flex flex-col min-h-screen",
-            heroFont.variable,
-            bodyFont.variable,
-            titleFont.variable,
-          )}
-        >
-          <AnimatePresence
-            mode="wait"
-            onExitComplete={() => window.scrollTo(0, 0)}
+      <PostHogProvider client={posthog}>
+        <Motion>
+          <main
+            className={cn(
+              "flex flex-col min-h-screen",
+              heroFont.variable,
+              bodyFont.variable,
+              titleFont.variable,
+            )}
           >
-            <Component key={router.route} {...pageProps} />
-          </AnimatePresence>
-        </main>
-      </Motion>
+            <AnimatePresence
+              mode="wait"
+              onExitComplete={() => window.scrollTo(0, 0)}
+            >
+              <Component key={router.route} {...pageProps} />
+            </AnimatePresence>
+          </main>
+        </Motion>
+      </PostHogProvider>
     </>
   );
 }

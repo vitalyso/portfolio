@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { m } from "framer-motion";
 import { NavButton } from "~/components/NavButton";
+import { usePostHog } from "posthog-js/react";
 
 const ANIMATION_DURATION = 0.75;
 
 export function AboutMe() {
+  const posthog = usePostHog();
   return (
     <section id="about" className="py-10 px-5 md:pt-[280px] md:pb-0">
       <div className="mx-auto max-w-[550px] pb-5 flex flex-col items-center relative">
@@ -62,6 +64,7 @@ export function AboutMe() {
           transition={{ duration: ANIMATION_DURATION, delay: 1.2 }}
         >
           <NavButton
+            onClick={() => posthog.capture("hero_cta_clicked")}
             anchor="contact"
             size="lg"
             className="mt-5 w-full md:w-auto"
