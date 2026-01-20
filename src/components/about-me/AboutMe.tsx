@@ -39,7 +39,7 @@ export function AboutMe() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: ANIMATION_DURATION, delay: 0.2 }}
-          className="text-center text-white text-3xl my-5 md:mb-0 md:text-5xl font-black font-hero leading-tight"
+          className="text-center text-white text-3xl my-3 md:text-4xl font-black font-hero leading-tight"
         >
           <span className="bg-gradient-to-b from-primary-300 to-primary-600 bg-clip-text text-transparent">
             product
@@ -51,7 +51,7 @@ export function AboutMe() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: ANIMATION_DURATION, delay: 0.3 }}
-          className="md:my-5 text-center text-neutral-200 leading-[1.25] font-light text-xl"
+          className="md:my4 text-center text-neutral-200 leading-[1.25] font-light text-xl"
         >
           Senior full-stack developer (React & Node.js) focused on product
           engineering. I solve technical problems and balance shipping fast with
