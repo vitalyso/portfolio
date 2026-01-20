@@ -1,5 +1,5 @@
 const title = "vitaly | product engineer";
-const image = "https://vitaly.so/meta.jpg";
+const image = "https://vitaly.so/me.webp";
 const description =
   "Senior full-stack developer (React & Node.js) focused on product engineering. I solve technical problems and balance shipping fast with building right. 10+ years building maintainable products.";
 
@@ -13,6 +13,7 @@ export function MetaTags() {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
+      <meta property="og:logo" content={"https://vitaly.so/logo.svg"} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@vitaly_so" />
