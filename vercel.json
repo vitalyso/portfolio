@@ -6,7 +6,7 @@
     },
     {
       "source": "/experiments/:path*",
-      "destination": "https://vitaly-so-experiments.vercel.app/:path*"
+      "destination": "https://vitaly-so-experiments.vercel.app/experiments/:path*"
     }
   ]
 }
