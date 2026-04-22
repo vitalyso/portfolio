@@ -3,6 +3,10 @@
     {
       "source": "/stats/:match*",
       "destination": "https://umami-nine-sigma.vercel.app/:match*"
+    },
+    {
+      "source": "/experiments/:path*",
+      "destination": "https://vitaly-so-experiments.vercel.app/:path*"
     }
   ]
 }
