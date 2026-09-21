@@ -7,7 +7,7 @@ export function MailLink() {
 
   useEffect(() => {
     setTimeout(() => {
-      setMailTo(["hello", "vitaly.so"].join("@"));
+      setMailTo(["hello", "sivkoff.com"].join("@"));
     }, 200);
   }, []);
 
