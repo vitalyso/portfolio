@@ -20,10 +20,10 @@ export function ContactForm() {
 
     const formData = new FormData(event.currentTarget);
 
-    // make the request to last at least 400ms for better UX
-    const [data] = await Promise.all([sendMessage(formData), wait(400)]);
-
     try {
+      // make the request to last at least 400ms for better UX
+      const [data] = await Promise.all([sendMessage(formData), wait(400)]);
+
       if (data.sent) {
         setSuccess(true);
         ref.current?.reset();
@@ -47,6 +47,10 @@ export function ContactForm() {
       ref={ref}
       onSubmit={handleSubmit}
     >
+      <div hidden aria-hidden="true">
+        <input name="csrf" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div className="w-full">
         <label className="font-bold mb-1" htmlFor="name">
           Name
