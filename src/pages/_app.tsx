@@ -4,7 +4,6 @@ import { Cormorant_Garamond, Montserrat, Mukta_Mahee } from "next/font/google";
 import { Motion } from "~/components/utils/Motion";
 import { cn } from "~/lib/utils";
 import { AnimatePresence } from "framer-motion";
-import { OpenPanelComponent } from "@openpanel/nextjs";
 import * as React from "react";
 import { useEffect } from "react";
 import { PostHogProvider } from "posthog-js/react";
@@ -43,31 +42,24 @@ export default function App({ Component, pageProps, router }: AppProps) {
   }, []);
 
   return (
-    <>
-      <OpenPanelComponent
-        clientId="0984658d-9408-4a44-a78b-2c5825e4d0c9"
-        trackScreenViews={true}
-        trackOutgoingLinks={true}
-      />
-      <PostHogProvider client={posthog}>
-        <Motion>
-          <main
-            className={cn(
-              "flex flex-col min-h-screen",
-              heroFont.variable,
-              bodyFont.variable,
-              titleFont.variable,
-            )}
+    <PostHogProvider client={posthog}>
+      <Motion>
+        <main
+          className={cn(
+            "flex flex-col min-h-screen",
+            heroFont.variable,
+            bodyFont.variable,
+            titleFont.variable,
+          )}
+        >
+          <AnimatePresence
+            mode="wait"
+            onExitComplete={() => window.scrollTo(0, 0)}
           >
-            <AnimatePresence
-              mode="wait"
-              onExitComplete={() => window.scrollTo(0, 0)}
-            >
-              <Component key={router.route} {...pageProps} />
-            </AnimatePresence>
-          </main>
-        </Motion>
-      </PostHogProvider>
-    </>
+            <Component key={router.route} {...pageProps} />
+          </AnimatePresence>
+        </main>
+      </Motion>
+    </PostHogProvider>
   );
 }
