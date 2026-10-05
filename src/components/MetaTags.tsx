@@ -1,16 +1,19 @@
-const siteUrl = "https://sivkoff.com";
+import { siteUrl } from "~/lib/site";
+
 const title = "vitaly | product engineer";
 const image = `${siteUrl}/me.webp`;
 const description =
   "Senior full-stack developer (React & Node.js) focused on product engineering. I solve technical problems and balance shipping fast with building right. 10+ years building maintainable products.";
 
-export function MetaTags() {
+export function MetaTags({ path }: { path: string }) {
+  const pageUrl = `${siteUrl}${path}`;
+
   return (
     <>
-      <link rel="canonical" href={siteUrl} />
+      <link rel="canonical" href={pageUrl} />
       <meta name="description" content={description} />
 
-      <meta property="og:url" content={siteUrl} />
+      <meta property="og:url" content={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
@@ -21,7 +24,7 @@ export function MetaTags() {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-      <meta name="twitter:url" content={siteUrl} />
+      <meta name="twitter:url" content={pageUrl} />
     </>
   );
 }

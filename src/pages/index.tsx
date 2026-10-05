@@ -34,7 +34,7 @@ export default function Home() {
     >
       <Head>
         <title>vitaly | product engineer</title>
-        <MetaTags />
+        <MetaTags path="/" />
       </Head>
       <Header />
       <AboutMe />

@@ -12,6 +12,7 @@ import {
   requestPortfolioList,
 } from "~/lib/request-portfolio";
 import Head from "next/head";
+import { siteUrl } from "~/lib/site";
 
 export default function Work({
   data,
@@ -40,6 +41,7 @@ export default function Work({
     >
       <Head>
         <title>{title}</title>
+        <link rel="canonical" href={`${siteUrl}/work/${data.id}`} />
         <meta name="description" content={data.summary} />
         <style>
           {`
@@ -145,6 +147,7 @@ export default function Work({
 }
 
 type Data = {
+  id: string;
   url?: string;
   title: string;
   content: string;

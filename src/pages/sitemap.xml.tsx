@@ -1,7 +1,6 @@
 import type { GetServerSideProps } from "next";
 import { requestPortfolioList } from "~/lib/request-portfolio";
-
-const siteUrl = "https://sivkoff.com";
+import { siteUrl } from "~/lib/site";
 
 function buildSitemap(paths: string[]) {
   const urls = paths

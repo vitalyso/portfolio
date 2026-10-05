@@ -25,7 +25,7 @@ export default function WorkPage(
     >
       <Head>
         <title>vitaly | software developer</title>
-        <MetaTags />
+        <MetaTags path="/work" />
       </Head>
 
       <Header initial="work" spy={false} />
