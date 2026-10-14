@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 type ContactMessage = { name: string; email: string; message: string };
 
-const LIMITS = { name: 100, email: 254, message: 5000 };
+const LIMITS = { name: 100, email: 254, message: 5000, minMessage: 20 };
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default async function handler(
@@ -26,6 +26,10 @@ export default async function handler(
   const validated = validate(data);
   if ("error" in validated) {
     return res.status(400).json({ sent: false, error: validated.error });
+  }
+
+  if (looksLikeBot(validated)) {
+    return res.status(200).json({ sent: true });
   }
 
   try {
@@ -61,9 +65,20 @@ function validate(
   if (email.length > LIMITS.email || !EMAIL_PATTERN.test(email)) {
     return { error: "Invalid email address" };
   }
+  if (message.length < LIMITS.minMessage) {
+    return { error: "Message is too short" };
+  }
   if (message.length > LIMITS.message) return { error: "Message is too long" };
 
   return { name, email, message };
+}
+
+// Random-case names like "ssDstlMIQtXJqzUjmSZeoes" and letterless messages
+// are bot probes; silently drop them instead of surfacing an error.
+function looksLikeBot({ name, message }: ContactMessage): boolean {
+  const caseFlips = name.match(/\p{Ll}\p{Lu}/gu)?.length ?? 0;
+  const hasLetters = /\p{L}/u.test(message);
+  return caseFlips >= 3 || !hasLetters;
 }
 
 function trimString(value: unknown): string {
