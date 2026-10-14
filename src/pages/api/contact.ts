@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 type ContactMessage = { name: string; email: string; message: string };
 
-const LIMITS = { name: 100, email: 254, message: 5000, minMessage: 20 };
+const LIMITS = { name: 100, email: 254, message: 5000, minMessage: 10 };
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default async function handler(
@@ -23,13 +23,17 @@ export default async function handler(
     return res.status(200).json({ sent: true });
   }
 
-  const validated = validate(data);
-  if ("error" in validated) {
-    return res.status(400).json({ sent: false, error: validated.error });
+  const fields = readFields(data);
+
+  const botReason = detectBot(fields);
+  if (botReason) {
+    console.warn("contact: dropped as bot", { reason: botReason });
+    return res.status(200).json({ sent: true });
   }
 
-  if (looksLikeBot(validated)) {
-    return res.status(200).json({ sent: true });
+  const validated = validate(fields);
+  if ("error" in validated) {
+    return res.status(400).json({ sent: false, error: validated.error });
   }
 
   try {
@@ -53,32 +57,47 @@ function parseBody(body: unknown): Record<string, unknown> | null {
   }
 }
 
-function validate(
-  data: Record<string, unknown>,
-): ContactMessage | { error: string } {
-  const name = trimString(data.name);
-  const email = trimString(data.email);
-  const message = trimString(data.message);
+function readFields(data: Record<string, unknown>): ContactMessage {
+  return {
+    name: trimString(data.name),
+    email: trimString(data.email),
+    message: trimString(data.message),
+  };
+}
+
+function validate({
+  name,
+  email,
+  message,
+}: ContactMessage): ContactMessage | { error: string } {
+  const messageLength = Array.from(message).length;
 
   if (!name || !email || !message) return { error: "Missing field(s)" };
   if (name.length > LIMITS.name) return { error: "Name is too long" };
   if (email.length > LIMITS.email || !EMAIL_PATTERN.test(email)) {
     return { error: "Invalid email address" };
   }
-  if (message.length < LIMITS.minMessage) {
+  if (messageLength < LIMITS.minMessage) {
     return { error: "Message is too short" };
   }
-  if (message.length > LIMITS.message) return { error: "Message is too long" };
+  if (messageLength > LIMITS.message) {
+    return { error: "Message is too long" };
+  }
 
   return { name, email, message };
 }
 
-// Random-case names like "ssDstlMIQtXJqzUjmSZeoes" and letterless messages
-// are bot probes; silently drop them instead of surfacing an error.
-function looksLikeBot({ name, message }: ContactMessage): boolean {
-  const caseFlips = name.match(/\p{Ll}\p{Lu}/gu)?.length ?? 0;
-  const hasLetters = /\p{L}/u.test(message);
-  return caseFlips >= 3 || !hasLetters;
+// Bot probes send random-case names and letterless (numeric) messages.
+// Returns the reason so the drop can be logged without the PII.
+function detectBot({ name, message }: ContactMessage): string | null {
+  if (message && !/\p{L}/u.test(message)) return "no letters in message";
+  if (name.split(/\s+/).some(isRandomCaseWord)) return "random-case name";
+  return null;
+}
+
+function isRandomCaseWord(word: string): boolean {
+  const caseFlips = word.match(/\p{Ll}\p{Lu}/gu)?.length ?? 0;
+  return word.length >= 12 && caseFlips >= 3;
 }
 
 function trimString(value: unknown): string {

@@ -86,6 +86,7 @@ export function ContactForm() {
           id="message"
           name="message"
           required
+          minLength={10}
           placeholder="Tell me about your project or problem"
         />
       </div>
