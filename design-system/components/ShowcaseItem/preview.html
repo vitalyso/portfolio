@@ -1,0 +1,12 @@
+<!-- @dsCard group="Content" height=360 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>html, body { background: var(--background, #1a1f25) !important; color: var(--foreground, #ffffff) !important; color-scheme: dark; min-height: 100%; } body{margin:0;padding:20px;} .row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;} .stack{display:flex;flex-direction:column;gap:16px;max-width:480px;}</style></head>
+<body>
+<div id="root" style="display:flex;flex-direction:column;gap:20px;max-width:900px"></div>
+<script>
+  var V = window.Vitaly, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, h(V.ShowcaseItem, { href: '#', background: 'var(--showcase-amie)', color: 'var(--showcase-amie-ink)', bgImage: '/_blob/f4d730c39d3167fc8e88abf1bcd6e6cb' }, h('img', { src: '/_blob/9d66c22cd714819105b98b12e412c053', width: 90, height: 27, alt: 'Amie' }), h('p', null, "Amie is a joyful productivity application that combines calendar, todos and many more.")), h(V.ShowcaseItem, { href: '#', background: 'var(--showcase-livejam)', color: 'var(--showcase-ink-light)', bgImage: '/_blob/71fd4e9c7f14f705bcabddca7db0a3d0' }, h('img', { src: '/_blob/1a7a74e45ec7fa82bf7cbed76b7612f5', width: 125, height: 58, alt: 'LiveJam' }), h('p', null, 'LiveJam is a music player based on YouTube API and their embedded player.'))));
+</script>
+</body>
+</html>

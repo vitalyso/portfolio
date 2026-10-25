@@ -1,0 +1,17 @@
+<!-- @dsCard group="Forms" height=480 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>html, body { background: var(--background, #1a1f25) !important; color: var(--foreground, #ffffff) !important; color-scheme: dark; min-height: 100%; } body{margin:0;padding:20px;} #root{max-width:480px;}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var V = window.Vitaly, h = React.createElement;
+  var calls = 0;
+  function onSubmit() {
+    calls += 1;
+    return Promise.resolve(calls === 1 ? { sent: false, error: 'Message is too short' } : { sent: true });
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(V.ContactForm, { onSubmit: onSubmit }));
+</script>
+</body>
+</html>
