@@ -1,0 +1,242 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-25T14:15:35Z"
+  },
+  "title": "vitaly.so",
+  "namespace": "Vitaly",
+  "libraries": [
+    {
+      "name": "react",
+      "version": "18"
+    },
+    {
+      "name": "react-dom",
+      "version": "18"
+    }
+  ],
+  "sections": {},
+  "groups": [
+    "Logos",
+    "Icons",
+    "Portraits",
+    "Showcase",
+    "Screenshots"
+  ],
+  "assetGroups": {
+    "Logos": {
+      "name": "Logos",
+      "tile": "m",
+      "order": [
+        "mark.svg",
+        "amie.svg",
+        "carient.svg",
+        "livejam.png"
+      ],
+      "files": {
+        "mark.svg": {
+          "name": "mark.svg",
+          "blob": "7caeb816ae4e5c3f0e9994928e011101",
+          "size": 572,
+          "type": "image/svg+xml"
+        },
+        "amie.svg": {
+          "name": "amie.svg",
+          "blob": "9d66c22cd714819105b98b12e412c053",
+          "size": 1823,
+          "type": "image/svg+xml"
+        },
+        "carient.svg": {
+          "name": "carient.svg",
+          "blob": "d1ec50e3ffe8563b746c078fdc47df02",
+          "size": 1962,
+          "type": "image/svg+xml"
+        },
+        "livejam.png": {
+          "name": "livejam.png",
+          "blob": "1a7a74e45ec7fa82bf7cbed76b7612f5",
+          "size": 15996,
+          "type": "image/png"
+        }
+      }
+    },
+    "Icons": {
+      "name": "Icons",
+      "tile": "xs",
+      "order": [
+        "github.svg",
+        "twitter-x.svg",
+        "linkedin.svg",
+        "mail.svg",
+        "star.svg",
+        "corner-arrow.svg"
+      ],
+      "files": {
+        "github.svg": {
+          "name": "github.svg",
+          "blob": "9defc133bb419407bb0c2840b6479b97",
+          "size": 680,
+          "type": "image/svg+xml"
+        },
+        "twitter-x.svg": {
+          "name": "twitter-x.svg",
+          "blob": "b03e61d3db972c00d3ccf9ae2b050a01",
+          "size": 270,
+          "type": "image/svg+xml"
+        },
+        "linkedin.svg": {
+          "name": "linkedin.svg",
+          "blob": "d01604e3c7706fb30510b0bc8ada88ed",
+          "size": 636,
+          "type": "image/svg+xml"
+        },
+        "mail.svg": {
+          "name": "mail.svg",
+          "blob": "6645497d19934b45b1132910b94edad9",
+          "size": 314,
+          "type": "image/svg+xml"
+        },
+        "star.svg": {
+          "name": "star.svg",
+          "blob": "ccd2850fc8c03bb3d2e3f5a63669acaf",
+          "size": 446,
+          "type": "image/svg+xml"
+        },
+        "corner-arrow.svg": {
+          "name": "corner-arrow.svg",
+          "blob": "3bffee20c9ad1f47b738dc45e76b5d03",
+          "size": 277,
+          "type": "image/svg+xml"
+        }
+      }
+    },
+    "Portraits": {
+      "name": "Portraits",
+      "tile": "s",
+      "order": [
+        "me.webp",
+        "bruce.webp",
+        "dennis.webp",
+        "ash.webp",
+        "liccy.webp",
+        "braden.webp",
+        "denis.webp"
+      ],
+      "files": {
+        "me.webp": {
+          "name": "me.webp",
+          "blob": "8e017e8106c2e940adffebe9df0241bd",
+          "size": 15102,
+          "type": "image/webp"
+        },
+        "bruce.webp": {
+          "name": "bruce.webp",
+          "blob": "a9741fbaa3d75f3a6cd14532c1d1f8f7",
+          "size": 2180,
+          "type": "image/webp"
+        },
+        "dennis.webp": {
+          "name": "dennis.webp",
+          "blob": "2e1bca7df0c6f3dc8564c65982e0207d",
+          "size": 3322,
+          "type": "image/webp"
+        },
+        "ash.webp": {
+          "name": "ash.webp",
+          "blob": "5fbe44b6a89b048489ae94ae76dddf6b",
+          "size": 8318,
+          "type": "image/webp"
+        },
+        "liccy.webp": {
+          "name": "liccy.webp",
+          "blob": "32b7a4a99d6ff75ecee943a0c4f39d69",
+          "size": 2816,
+          "type": "image/webp"
+        },
+        "braden.webp": {
+          "name": "braden.webp",
+          "blob": "eec702ee09e13f44b31d920edadf1277",
+          "size": 1316,
+          "type": "image/webp"
+        },
+        "denis.webp": {
+          "name": "denis.webp",
+          "blob": "d6ed7edc787c47e189552383619cd090",
+          "size": 1414,
+          "type": "image/webp"
+        }
+      }
+    },
+    "Showcase": {
+      "name": "Showcase",
+      "tile": "l",
+      "order": [
+        "amie.webp",
+        "carient.webp",
+        "livejam.webp"
+      ],
+      "files": {
+        "amie.webp": {
+          "name": "amie.webp",
+          "blob": "f4d730c39d3167fc8e88abf1bcd6e6cb",
+          "size": 32488,
+          "type": "image/webp"
+        },
+        "carient.webp": {
+          "name": "carient.webp",
+          "blob": "f54698afca817207f3251a54e8dd2864",
+          "size": 60152,
+          "type": "image/webp"
+        },
+        "livejam.webp": {
+          "name": "livejam.webp",
+          "blob": "71fd4e9c7f14f705bcabddca7db0a3d0",
+          "size": 51676,
+          "type": "image/webp"
+        }
+      }
+    },
+    "Screenshots": {
+      "name": "Screenshots",
+      "tile": "l",
+      "order": [
+        "amie.png",
+        "carient.png",
+        "sparrow.png"
+      ],
+      "files": {
+        "amie.png": {
+          "name": "amie.png",
+          "blob": "d739ed1cfc4b10b436dab409bc2c5663",
+          "size": 594640,
+          "type": "image/png"
+        },
+        "carient.png": {
+          "name": "carient.png",
+          "blob": "1f87b4f7dc973688baec684687fe66b3",
+          "size": 62121,
+          "type": "image/png"
+        },
+        "sparrow.png": {
+          "name": "sparrow.png",
+          "blob": "4440b52f850737fa35093d8af5cb4f94",
+          "size": 210197,
+          "type": "image/png"
+        }
+      }
+    }
+  },
+  "blobs": {},
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "lastChange": {
+    "by": "Vitaly Sivkov",
+    "at": "2026-10-25T14:30:23Z",
+    "via": "Claude Code",
+    "note": "Added Header and ContactForm; review fixes (labels, pending opacity, a11y, default mail link)"
+  }
+}

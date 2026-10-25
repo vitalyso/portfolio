@@ -1,0 +1,12 @@
+<!-- @dsCard group="Forms" height=150 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>html, body { background: var(--background, #1a1f25) !important; color: var(--foreground, #ffffff) !important; color-scheme: dark; min-height: 100%; } body{margin:0;padding:20px;} .row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;} .stack{display:flex;flex-direction:column;gap:16px;max-width:480px;}</style></head>
+<body>
+<div id="root" class="stack"></div>
+<script>
+  var V = window.Vitaly, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null, h('label', { className: 'vs-label', htmlFor: 'n' }, 'Name'), h(V.Input, { id: 'n', placeholder: 'How should I call you?' }), h('div', { style: { height: 16 } }), h('label', { className: 'vs-label', htmlFor: 'e' }, 'Email'), h(V.Input, { id: 'e', type: 'email', defaultValue: 'not-an-email', 'aria-invalid': true }), h('div', { className: 'vs-error', style: { marginTop: 4 } }, 'Please enter a valid email')));
+</script>
+</body>
+</html>

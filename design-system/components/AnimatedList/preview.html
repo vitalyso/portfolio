@@ -1,0 +1,12 @@
+<!-- @dsCard group="Content" height=220 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>html, body { background: var(--background, #1a1f25) !important; color: var(--foreground, #ffffff) !important; color-scheme: dark; min-height: 100%; } body{margin:0;padding:20px;} .row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;} .stack{display:flex;flex-direction:column;gap:16px;max-width:480px;}</style></head>
+<body>
+<div id="root" class="row" style="align-items:flex-start;gap:0"></div>
+<script>
+  var V = window.Vitaly, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, h(V.AnimatedList, { rule: 4, title: 'Core tools', items: ['React', 'TypeScript', 'Node.js'] }), h(V.AnimatedList, { rule: 2, title: 'Scope', items: ['Frontend', 'Architecture'], baseDelay: 0.2 }), h(V.AnimatedList, { rule: 1, title: 'Timeframe', items: ['2021 — now'], baseDelay: 0.4 })));
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!-- @dsCard group="Content" height=280 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>html, body { background: var(--background, #1a1f25) !important; color: var(--foreground, #ffffff) !important; color-scheme: dark; min-height: 100%; } body{margin:0;padding:20px;} .row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;} .stack{display:flex;flex-direction:column;gap:16px;max-width:480px;}</style></head>
+<body>
+<div id="root" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:20px"></div>
+<script>
+  var V = window.Vitaly, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, h(V.WorkListItem, { href: '#', cover: '/_blob/d739ed1cfc4b10b436dab409bc2c5663', title: 'Amie' }), h(V.WorkListItem, { href: '#', cover: '/_blob/1f87b4f7dc973688baec684687fe66b3', title: 'Carient' }), h(V.WorkListItem, { href: '#', cover: '/_blob/4440b52f850737fa35093d8af5cb4f94', title: 'Sparrow Reporting Tool' })));
+</script>
+</body>
+</html>

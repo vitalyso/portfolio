@@ -1,0 +1,12 @@
+<!-- @dsCard group="Navigation" height=72 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>html, body { background: var(--background, #1a1f25) !important; color: var(--foreground, #ffffff) !important; color-scheme: dark; min-height: 100%; } body{margin:0;padding:20px;} .row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;} .stack{display:flex;flex-direction:column;gap:16px;max-width:480px;}</style></head>
+<body>
+<nav id="root" class="vs-nav"></nav>
+<script>
+  var V = window.Vitaly, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, h(V.NavLink, { href: '#about' }, 'about'), h(V.NavLink, { href: '#work', active: true }, 'works'), h(V.NavLink, { href: '#feedback' }, 'feedback')));
+</script>
+</body>
+</html>
